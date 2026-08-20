@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 /**
  * Renders the four documents to A4 PDFs in public/docs.
- * Requires the production server to be running on PORT (default 3121).
+ * Requires the production server to be running on PORT (default 3111).
  *
- *   npm run build && npx next start -p 3121 &
+ *   npm run build && npx next start -p 3111 &
  *   node scripts/make-pdfs.mjs
  */
-import { chromium } from "/home/mohi7/debugai-mvp/.claude/skills/design-review/scripts/node_modules/playwright/index.mjs";
+import { getChromium } from "./browser.mjs";
 import { mkdirSync } from "node:fs";
 import { resolve } from "node:path";
 
-const PORT = process.env.PORT || 3121;
+const PORT = process.env.PORT || 3111;
 const BASE = `http://127.0.0.1:${PORT}`;
 const OUT = resolve(process.cwd(), "public/docs");
 
@@ -23,6 +23,7 @@ const DOCS = [
 
 mkdirSync(OUT, { recursive: true });
 
+const chromium = await getChromium();
 const browser = await chromium.launch();
 const page = await browser.newPage();
 

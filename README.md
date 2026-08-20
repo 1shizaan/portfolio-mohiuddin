@@ -28,11 +28,15 @@ and a research resume and CV. The print stylesheet lives at the bottom of
 `app/globals.css` and only applies under `@media print`.
 
 ```bash
+npx playwright install chromium   # once
 npm run build
 npx next start -p 3111 &
 npm run pdfs           # -> public/docs/*.pdf   (A4, one page resumes, three page CVs)
 curl -s localhost:3111/raw/eng-resume -o public/docs/Mohi-Uddin-Resume-Engineering.md
 ```
+
+`PORT` overrides the port both scripts talk to, so `PORT=3200 npm run pdfs` works
+if 3111 is busy.
 
 Editing a bullet in `lib/resume.ts` updates the web page, the PDF and the markdown
 together. There is no second copy to forget about.
@@ -40,7 +44,8 @@ together. There is no second copy to forget about.
 ## Checks
 
 ```bash
-npm run shots          # every route at 1440 / 834 / 390, reports horizontal overflow
+npm run shots                          # every route at 1440 / 834 / 390
+ROUTES="/,/work/inkline" npm run shots  # or just the ones you touched
 ```
 
 Horizontal overflow must be `0px` everywhere. That is the only automated visual

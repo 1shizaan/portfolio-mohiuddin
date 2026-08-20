@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 /** Screenshots every route at three widths into .shots/ so layout can be checked. */
-import { chromium } from "/home/mohi7/debugai-mvp/.claude/skills/design-review/scripts/node_modules/playwright/index.mjs";
+import { getChromium } from "./browser.mjs";
 import { mkdirSync } from "node:fs";
 
-const PORT = process.env.PORT || 3121;
+const PORT = process.env.PORT || 3111;
 const BASE = `http://127.0.0.1:${PORT}`;
 const OUT = process.env.SHOTS_DIR || ".shots";
 mkdirSync(OUT, { recursive: true });
@@ -17,6 +17,7 @@ const SIZES = [
   ["phone", 390, 860],
 ];
 
+const chromium = await getChromium();
 const browser = await chromium.launch();
 for (const [tag, w, h] of SIZES) {
   const ctx = await browser.newContext({ viewport: { width: w, height: h }, deviceScaleFactor: 1 });
