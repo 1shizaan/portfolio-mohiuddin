@@ -10,7 +10,7 @@ I build systems that have to survive a real constraint, and I write down which n
 
 ### Founder and sole engineer (Launched Jun 2026)
 
-*Feb 2026 – present · DebugAI — an AI debugger for VS Code, debugai.io*
+*Feb 2026 – present · DebugAI · an AI debugger for VS Code, debugai.io*
 
 - Designed and shipped every layer: a VS Code extension, an Express API gateway, a FastAPI inference engine, a Next.js dashboard and marketing site, PostgreSQL with pgvector, Redis, and the deployment pipeline across Vercel and Railway.
 - 412 VS Code Marketplace installs and 4,600+ combined downloads across VS Code, Open VSX and npm, verified against the live registry APIs. Installs and downloads are separate metrics and only one of them sums.
@@ -35,7 +35,7 @@ I build systems that have to survive a real constraint, and I write down which n
 
 ## Engineering projects
 
-### MatchLedger AI — reconciliation at 100,000 rows a side
+### MatchLedger AI · reconciliation at 100,000 rows a side
 
 *May 2025 – present · Founder, sole engineer. Paused pending company registration.*
 
@@ -47,7 +47,7 @@ I build systems that have to survive a real constraint, and I write down which n
 
 `Python, FastAPI, pandas, PostgreSQL, Celery, Redis, React, Docker, AWS EC2`
 
-### Inkline — handwriting to font, no server involved
+### Inkline · handwriting to font, no server involved
 
 *Aug 2026*
 
@@ -58,7 +58,7 @@ I build systems that have to survive a real constraint, and I write down which n
 
 `TypeScript, Next.js, Canvas, opentype.js, pako, IndexedDB, Playwright`
 
-### SS Categorise — multimodal classification
+### SS Categorise · multimodal classification
 
 *2024, rebuilt Feb – Apr 2026*
 
@@ -68,7 +68,7 @@ I build systems that have to survive a real constraint, and I write down which n
 
 `PyTorch, EfficientNet-B3, OCR, TF-IDF, scikit-learn, Streamlit`
 
-### Deconstruct — video breakdown studio
+### Deconstruct · video breakdown studio
 
 *Jul 2026*
 
@@ -78,7 +78,7 @@ I build systems that have to survive a real constraint, and I write down which n
 
 `FastAPI, ffmpeg, PySceneDetect, librosa, Demucs, OpenCV, RapidOCR, React, Vite`
 
-### SecAudit — static security scanner, zero dependencies
+### SecAudit · static security scanner, zero dependencies
 
 *Mar 2026*
 
@@ -87,7 +87,7 @@ I build systems that have to survive a real constraint, and I write down which n
 
 `Python standard library`
 
-### Telecare Nabha — rural telemedicine, Smart India Hackathon 2025
+### Telecare Nabha · rural telemedicine, Smart India Hackathon 2025
 
 *2025*
 
@@ -98,7 +98,7 @@ I build systems that have to survive a real constraint, and I write down which n
 
 ## Hardware and research work
 
-### OptiXon — health sensing eyewear, full hardware and firmware design
+### OptiXon · health sensing eyewear, full hardware and firmware design
 
 *2024 – Jul 2026 · Founder and technical lead. Paper phase complete, no prototype built.*
 
@@ -109,7 +109,7 @@ I build systems that have to survive a real constraint, and I write down which n
 
 `nRF52832, MAX30102, LSM6DSOX, KiCad, FreeCAD, ngspice, nRF5 SDK, C`
 
-### BeyondVision — spectral imaging specification
+### BeyondVision · spectral imaging specification
 
 *2026*
 
@@ -120,13 +120,13 @@ I build systems that have to survive a real constraint, and I write down which n
 
 ## Skills
 
-- **Languages** — Python, TypeScript, JavaScript, C, SQL
-- **Backend and data** — FastAPI, Express, Node.js, Celery, Redis, PostgreSQL, pgvector, SQLAlchemy, pandas, REST and webhook design
-- **Frontend** — React, Next.js App Router, Vite, Canvas, server sent events, design systems
-- **Machine learning** — PyTorch, TensorFlow, scikit-learn, OpenCV, EfficientNet and ResNet fine tuning, embeddings and retrieval, model routing, evaluation and error analysis
-- **Infrastructure** — Docker and Compose, AWS EC2, Railway, Vercel, nginx, GitHub Actions, Sentry, migration discipline
-- **Hardware** — KiCad, FreeCAD, ngspice, nRF52 and ESP32, MEMS sensors, PPG and IMU signal handling, power budgeting
-- **Security** — OWASP Top 10, HMAC webhook verification, constant time comparison, CSRF and session design, threat modelling
+- **Languages** · Python, TypeScript, JavaScript, C, SQL
+- **Backend and data** · FastAPI, Express, Node.js, Celery, Redis, PostgreSQL, pgvector, SQLAlchemy, pandas, REST and webhook design
+- **Frontend** · React, Next.js App Router, Vite, Canvas, server sent events, design systems
+- **Machine learning** · PyTorch, TensorFlow, scikit-learn, OpenCV, EfficientNet and ResNet fine tuning, embeddings and retrieval, model routing, evaluation and error analysis
+- **Infrastructure** · Docker and Compose, AWS EC2, Railway, Vercel, nginx, GitHub Actions, Sentry, migration discipline
+- **Hardware** · KiCad, FreeCAD, ngspice, nRF52 and ESP32, MEMS sensors, PPG and IMU signal handling, power budgeting
+- **Security** · OWASP Top 10, HMAC webhook verification, constant time comparison, CSRF and session design, threat modelling
 
 ## Education
 

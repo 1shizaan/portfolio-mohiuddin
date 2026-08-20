@@ -61,15 +61,7 @@ export default function Home() {
           </h1>
         </Reveal>
 
-        <div
-          className="mt40"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "minmax(0, 1.02fr) minmax(0, 1.18fr)",
-            gap: 46,
-            alignItems: "start",
-          }}
-        >
+        <div className="split hero mt40">
           <Reveal delay={120}>
             <div className="prose lead">
               <p>
@@ -225,14 +217,8 @@ export default function Home() {
               <Reveal key={p.slug} delay={i * 60}>
                 <Link
                   href={`/work/${p.slug}`}
-                  className="panel"
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)",
-                    gap: 30,
-                    padding: 28,
-                    textDecoration: "none",
-                  }}
+                  className="panel split card"
+                  style={{ padding: 28, textDecoration: "none" }}
                 >
                   <div className="stack g14">
                     <div className="row wrap g8 center">

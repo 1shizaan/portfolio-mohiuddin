@@ -30,13 +30,13 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.short} — systems, models, and hardware under constraint`,
-    template: `%s — ${site.short}`,
+    default: `${site.short} · fourteen projects built under constraint`,
+    template: `%s · ${site.short}`,
   },
   description:
     "Fourteen projects across AI systems, computer vision, embedded hardware and developer tooling. Every claim carries a provenance tag saying how the number was obtained.",
   openGraph: {
-    title: `${site.short} — systems, models, and hardware under constraint`,
+    title: `${site.short} · fourteen projects built under constraint`,
     description:
       "Fourteen projects. Every number says how it was obtained: measured, derived, estimated, or paper.",
     type: "website",

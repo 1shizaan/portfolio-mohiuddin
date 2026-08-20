@@ -20,7 +20,7 @@ Signal recovery under motion and noise, and trust gates that discard corrupted m
 
 ## Research projects
 
-### OptiXon — photoplethysmography in prescription eyewear
+### OptiXon · photoplethysmography in prescription eyewear
 
 *2024 – Jul 2026 · Founder and technical lead · Second place, Techno Udbhav 2025 research competition*
 
@@ -49,9 +49,9 @@ Signal recovery under motion and noise, and trust gates that discard corrupted m
 
 ## Technical skills
 
-- **Programming** — Python (primary), TypeScript, C, SQL
-- **ML, signals** — PyTorch, TensorFlow, scikit-learn, OpenCV, embeddings and retrieval, evaluation design · PPG and IMU processing, motion artifact rejection, ngspice, KiCad, nRF52, power budgeting
-- **Mathematics** — Linear algebra, probability and statistics, optimisation, numerical methods. Learning: uncertainty quantification, probabilistic machine learning
+- **Programming** · Python (primary), TypeScript, C, SQL
+- **ML, signals** · PyTorch, TensorFlow, scikit-learn, OpenCV, embeddings and retrieval, evaluation design · PPG and IMU processing, motion artifact rejection, ngspice, KiCad, nRF52, power budgeting
+- **Mathematics** · Linear algebra, probability and statistics, optimisation, numerical methods. Learning: uncertainty quantification, probabilistic machine learning
 
 ## Recognition
 

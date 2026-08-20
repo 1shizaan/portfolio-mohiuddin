@@ -116,12 +116,12 @@ Signal recovery under motion and noise, and the design of trust gates that disca
 
 ## Technical skills
 
-- **Programming** — Python (primary), TypeScript, JavaScript, C, SQL
-- **Machine learning** — PyTorch, TensorFlow, scikit-learn, OpenCV, convolutional fine tuning, embeddings and retrieval, multimodal fusion, error analysis, evaluation design
-- **Signals and hardware** — PPG and IMU processing, motion artifact rejection, power budgeting, ngspice, KiCad, FreeCAD, nRF52, ESP32, MEMS sensors
-- **Systems** — FastAPI, PostgreSQL, Redis, Celery, Docker, pgvector, distributed job design
-- **Mathematics** — Linear algebra, probability and statistics, optimisation, numerical methods, geometric algorithms
-- **Currently learning** — Uncertainty quantification, probabilistic machine learning, diffusion models, radiometric calibration
+- **Programming** · Python (primary), TypeScript, JavaScript, C, SQL
+- **Machine learning** · PyTorch, TensorFlow, scikit-learn, OpenCV, convolutional fine tuning, embeddings and retrieval, multimodal fusion, error analysis, evaluation design
+- **Signals and hardware** · PPG and IMU processing, motion artifact rejection, power budgeting, ngspice, KiCad, FreeCAD, nRF52, ESP32, MEMS sensors
+- **Systems** · FastAPI, PostgreSQL, Redis, Celery, Docker, pgvector, distributed job design
+- **Mathematics** · Linear algebra, probability and statistics, optimisation, numerical methods, geometric algorithms
+- **Currently learning** · Uncertainty quantification, probabilistic machine learning, diffusion models, radiometric calibration
 
 ## Recognition and external validation
 

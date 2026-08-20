@@ -19,15 +19,7 @@ export default function About() {
         </h1>
       </Reveal>
 
-      <div
-        className="mt56"
-        style={{
-          display: "grid",
-          gridTemplateColumns: "minmax(0, 1.25fr) minmax(0, 0.75fr)",
-          gap: 54,
-          alignItems: "start",
-        }}
-      >
+      <div className="split about mt56">
         <Reveal delay={60}>
           <div className="prose lead">
             <p>

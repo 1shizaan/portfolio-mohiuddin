@@ -36,7 +36,7 @@ export async function GET(
       for (const item of s.list) L.push(`- ${item}`);
       L.push("");
     } else if (s.kind === "skills") {
-      for (const g of s.skills) L.push(`- **${g.group}** — ${g.items}`);
+      for (const g of s.skills) L.push(`- **${g.group}** · ${g.items}`);
       L.push("");
     } else {
       for (const e of s.entries) {

@@ -79,7 +79,7 @@ const RECOGNITION: string[] = [
 ];
 
 /* ============================================================
-   ENGINEERING RESUME — one page, for startups and product teams
+   ENGINEERING RESUME · one page, for startups and product teams
    ============================================================ */
 
 const ENG_RESUME: Doc = {
@@ -100,7 +100,7 @@ const ENG_RESUME: Doc = {
         {
           when: "Feb 2026 – now",
           title: "Founder and sole engineer",
-          sub: "DebugAI — an AI debugger for VS Code, debugai.io",
+          sub: "DebugAI · an AI debugger for VS Code, debugai.io",
           tag: "Launched",
           bullets: [
             "Built and launched every layer of a five service monorepo: VS Code extension, Express gateway, FastAPI inference engine, Next.js dashboard, PostgreSQL with pgvector, Redis. 412 Marketplace installs, 4,600+ downloads across three registries, 815 commits, 329 engine tests passing.",
@@ -125,28 +125,28 @@ const ENG_RESUME: Doc = {
       entries: [
         {
           when: "May 2025 – now",
-          title: "MatchLedger AI — bank reconciliation engine",
+          title: "MatchLedger AI · bank reconciliation engine",
           bullets: [
             "Three passes ordered by cost: a vectorised hash join, a date tolerance pass, then fuzzy narration similarity on the remainder, blocked by amount bucket and date window. 100,000 against 98,000 rows in 4.25 seconds, 95% match rate, zero API calls, zero mismatches against ground truth. Unblocked the same job is a 9.8 billion comparison cross product. FastAPI, Celery, Redis, PostgreSQL, React, Docker.",
           ],
         },
         {
           when: "2024, rebuilt 2026",
-          title: "SS Categorise — multimodal classifier",
+          title: "SS Categorise · multimodal classifier",
           bullets: [
             "Fused an EfficientNet-B3 embedding with a 500 term TF-IDF vector over OCR text: 96.92% on a 260 image held-out set across 20 classes. The gain over the single model version came from the confusion matrix showing a missing input channel, not an underfitted model. PyTorch, scikit-learn.",
           ],
         },
         {
           when: "Aug 2026",
-          title: "Inkline — handwriting to installable font, fully client side",
+          title: "Inkline · handwriting to installable font, fully client side",
           bullets: [
             "Homography un-warp of a photographed sheet, then a Moore boundary tracer and Schneider cubic fitter written from scratch because Potrace is GPL and would attach itself to every font made with the tool. Proven by a headless browser test that downloads the generated OTF and parses it back. TypeScript, Next.js, Canvas, Playwright.",
           ],
         },
         {
           when: "Mar 2026",
-          title: "SecAudit — static security scanner, zero dependencies",
+          title: "SecAudit · static security scanner, zero dependencies",
           bullets: [
             "One standard library Python file, 60+ rules mapped to the OWASP Top 10 across six languages, 12,000 lines scanned in under two seconds with no network and no upload.",
           ],
@@ -180,7 +180,7 @@ const ENG_RESUME: Doc = {
 };
 
 /* ============================================================
-   ENGINEERING CV — two pages, deeper
+   ENGINEERING CV · two pages, deeper
    ============================================================ */
 
 const ENG_CV: Doc = {
@@ -201,7 +201,7 @@ const ENG_CV: Doc = {
         {
           when: "Feb 2026 – present",
           title: "Founder and sole engineer",
-          sub: "DebugAI — an AI debugger for VS Code, debugai.io",
+          sub: "DebugAI · an AI debugger for VS Code, debugai.io",
           tag: "Launched Jun 2026",
           bullets: [
             "Designed and shipped every layer: a VS Code extension, an Express API gateway, a FastAPI inference engine, a Next.js dashboard and marketing site, PostgreSQL with pgvector, Redis, and the deployment pipeline across Vercel and Railway.",
@@ -224,7 +224,7 @@ const ENG_CV: Doc = {
       entries: [
         {
           when: "May 2025 – present",
-          title: "MatchLedger AI — reconciliation at 100,000 rows a side",
+          title: "MatchLedger AI · reconciliation at 100,000 rows a side",
           sub: "Founder, sole engineer. Paused pending company registration.",
           bullets: [
             "Three passes ordered cheapest first. A vectorised hash join on amount, date and reference. A tolerance pass on exact amount with a configurable date window and greedy closest date assignment. A fuzzy narration pass run only on the remainder, blocked by amount bucket and date window so it never becomes an O(n×m) scan.",
@@ -237,7 +237,7 @@ const ENG_CV: Doc = {
         },
         {
           when: "Aug 2026",
-          title: "Inkline — handwriting to font, no server involved",
+          title: "Inkline · handwriting to font, no server involved",
           bullets: [
             "Template geometry, scan, trace and build as four independently testable pure modules. Corner markers plus a rotation pip define a reference frame, so after homography every cell is at a known position and no letter level alignment guessing is needed.",
             "Tracer written from scratch: Moore neighbour boundary following with hole detection, staircase smoothing, corner detection over an angular window, Schneider least squares cubic fitting with Newton-Raphson reparameterisation, winding normalised so counters render as holes.",
@@ -248,7 +248,7 @@ const ENG_CV: Doc = {
         },
         {
           when: "2024, rebuilt Feb – Apr 2026",
-          title: "SS Categorise — multimodal classification",
+          title: "SS Categorise · multimodal classification",
           bullets: [
             "Version one: a fine tuned ResNet on roughly 12,000 scraped images with K-means proposing groupings before labelling. It plateaued and adding data did not help.",
             "Version two: EfficientNet-B3 image embedding concatenated with a 500 term TF-IDF vector over OCR text, classified by logistic regression. 96.92% on a 260 image held-out test set across 20 classes.",
@@ -258,7 +258,7 @@ const ENG_CV: Doc = {
         },
         {
           when: "Jul 2026",
-          title: "Deconstruct — video breakdown studio",
+          title: "Deconstruct · video breakdown studio",
           bullets: [
             "Separates audio stems with Demucs, detects every cut, extracts per shot camera motion with optical flow and matches it to a named CSS cubic-bezier, reads caption timing with OCR, and reports the colour grade.",
             "Marks each cut green or red depending on whether it lands on a musical beat, which is the single comparison that teaches edit rhythm.",
@@ -268,7 +268,7 @@ const ENG_CV: Doc = {
         },
         {
           when: "Mar 2026",
-          title: "SecAudit — static security scanner, zero dependencies",
+          title: "SecAudit · static security scanner, zero dependencies",
           bullets: [
             "One Python file, standard library only. 60+ rules across the OWASP Top 10 covering secrets, injection, authentication flaws, deserialisation, missing rate limits and misconfiguration, for Python, JavaScript, TypeScript, React, FastAPI, Node, Go, Ruby and PHP.",
             "Text, HTML or JSON output with a severity filter so it can gate a CI pipeline. Written after doing a full manual remediation pass on my own codebase, so most rules are mistakes I had made.",
@@ -277,7 +277,7 @@ const ENG_CV: Doc = {
         },
         {
           when: "2025",
-          title: "Telecare Nabha — rural telemedicine, Smart India Hackathon 2025",
+          title: "Telecare Nabha · rural telemedicine, Smart India Hackathon 2025",
           bullets: [
             "Built for a district where 31% of households have internet access and the civil hospital runs 11 doctors against 23 sanctioned posts for 173 villages.",
             "Dual channel by design: a smartphone app and an IVR path over a button phone, offline first health records that reconcile when a connection appears, and live pharmacy stock so a patient does not lose a day of wages travelling to an empty shelf.",
@@ -292,7 +292,7 @@ const ENG_CV: Doc = {
       entries: [
         {
           when: "2024 – Jul 2026",
-          title: "OptiXon — health sensing eyewear, full hardware and firmware design",
+          title: "OptiXon · health sensing eyewear, full hardware and firmware design",
           sub: "Founder and technical lead. Paper phase complete, no prototype built.",
           bullets: [
             "PPG, six axis IMU and skin temperature sensing on a 138 × 10.5mm four layer flex-rigid board inside an eyeglass temple, with BLE and hardware battery protection.",
@@ -304,7 +304,7 @@ const ENG_CV: Doc = {
         },
         {
           when: "2026",
-          title: "BeyondVision — spectral imaging specification",
+          title: "BeyondVision · spectral imaging specification",
           bullets: [
             "A ten document design set for spectral capture on phones and cheap add on hardware, built around a provenance rule: every pixel is tagged MEASURED, RECONSTRUCTED or SIMULATED and nothing exports without the tag.",
             "Establishes what is physically impossible before designing anything. Silicon stops at 1107nm because its bandgap is 1.12 electronvolts, so thermal imaging from a phone camera cannot exist, and five hardware tiers from zero to roughly 250 dollars are specified against that boundary.",
@@ -332,7 +332,7 @@ const ENG_CV: Doc = {
 };
 
 /* ============================================================
-   RESEARCH RESUME — one page
+   RESEARCH RESUME · one page
    ============================================================ */
 
 const RES_RESUME: Doc = {
@@ -371,7 +371,7 @@ const RES_RESUME: Doc = {
       entries: [
         {
           when: "2024 – Jul 2026",
-          title: "OptiXon — photoplethysmography in prescription eyewear",
+          title: "OptiXon · photoplethysmography in prescription eyewear",
           sub: "Founder and technical lead · Second place, Techno Udbhav 2025 research competition",
           bullets: [
             "Continuous heart rate sensing from the superficial temporal artery through a sensor in an eyeglass temple, where the dominant problem is motion artifact rather than sensor selection. The inertial unit acts as a trust gate: the gyroscope flags the corrupted window before processing, so bad samples are discarded rather than averaged into a confident wrong reading.",
@@ -423,7 +423,7 @@ const RES_RESUME: Doc = {
 };
 
 /* ============================================================
-   RESEARCH CV — three pages
+   RESEARCH CV · three pages
    ============================================================ */
 
 const RES_CV: Doc = {

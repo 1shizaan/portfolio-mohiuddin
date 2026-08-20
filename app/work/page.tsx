@@ -24,15 +24,7 @@ export default function WorkPage() {
       </Reveal>
 
       <Reveal delay={80}>
-        <div
-          className="mt40"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "minmax(0, 1.1fr) minmax(0, 0.9fr)",
-            gap: 40,
-            alignItems: "end",
-          }}
-        >
+        <div className="split ends mt40">
           <p className="prose">
             Sorted newest first. Filter by domain if you are looking for a specific kind of
             problem. Each case study is written the same way: the problem, the constraint that

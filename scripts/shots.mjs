@@ -3,7 +3,7 @@
 import { chromium } from "/home/mohi7/debugai-mvp/.claude/skills/design-review/scripts/node_modules/playwright/index.mjs";
 import { mkdirSync } from "node:fs";
 
-const PORT = process.env.PORT || 3119;
+const PORT = process.env.PORT || 3121;
 const BASE = `http://127.0.0.1:${PORT}`;
 const OUT = process.env.SHOTS_DIR || ".shots";
 mkdirSync(OUT, { recursive: true });

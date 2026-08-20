@@ -20,7 +20,7 @@ export async function generateMetadata({
   const p = bySlug(slug);
   if (!p) return { title: "Not found" };
   return {
-    title: `${p.name} — ${p.kicker}`,
+    title: `${p.name} · ${p.kicker}`,
     description: p.summary,
     openGraph: { title: p.name, description: p.summary },
   };
