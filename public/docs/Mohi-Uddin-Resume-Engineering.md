@@ -1,6 +1,6 @@
 # Mohammed Mohi Uddin
 
-Hyderabad, India · t.d.m.mohi@gmail.com · +91 78424 49809 · linkedin.com/in/mohi-uddin · github.com/1shizaan
+Hyderabad, India · t.d.m.mohi@gmail.com · +91 78424 49809 · linkedin.com/in/mohammed-mohi-uddin-13b818333 · github.com/1shizaan
 
 **AI systems and backend engineer**
 

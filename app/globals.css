@@ -119,6 +119,17 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
 }
 .d1 em, .d2 em, .d3 em { font-style: italic; color: var(--amber); }
 
+/* Text selection is painted at the font's full ascent plus descent, which is
+   about 1.30em on the display face and 1.33em on the mono. These lines run
+   tighter line boxes than that on purpose, so a highlighted heading paints
+   taller than its own box and covers the line above it. Reserve the
+   difference as padding, in em, so it tracks the clamped font size. */
+.d1 { padding-block: 0.225em; }
+.d2 { padding-block: 0.175em; }
+.d3 { padding-block: 0.125em; }
+.slab-n { padding-block: 0.17em; }
+
+
 .h-ui {
   font-family: var(--ui);
   font-weight: 500;
@@ -544,7 +555,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
   flex-wrap: wrap;
   gap: 8px 10px;
   align-items: center;
-  margin-bottom: 26px;
+  margin-bottom: 12px;
 }
 
 .blocks { display: flex; flex-direction: column; }
@@ -612,6 +623,103 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
   border-radius: 2px;
   padding: 4px 8px;
   background: var(--panel);
+}
+
+/* ============================================================
+   EVIDENCE PLATES
+   Something the project exported, mounted and captioned. White
+   line art sits on a paper mount so it reads as a print pinned
+   to the bench rather than a hole burned in the panel.
+   ============================================================ */
+
+.plates {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+.plate.wide { grid-column: 1 / -1; }
+@media (max-width: 900px) {
+  .plates { grid-template-columns: 1fr; }
+}
+
+.plate {
+  margin: 0;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: var(--panel);
+  overflow: hidden;
+  transition: border-color 160ms ease;
+}
+.plate:hover { border-color: var(--rule-3); }
+
+.plate-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--panel-2);
+}
+.plate-n {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  color: var(--amber);
+  flex: 0 0 auto;
+}
+.plate-t {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.4;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.plate-mount {
+  display: block;
+  padding: 16px;
+  background: var(--void);
+  cursor: zoom-in;
+  border-bottom: 1px solid var(--rule);
+}
+.plate[data-tone="paper"] .plate-mount {
+  background: #EDEBE4;
+  padding: 18px;
+}
+.plate-mount img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+}
+.plate[data-tone="paper"] .plate-mount img {
+  border: 1px solid rgba(10, 11, 13, 0.14);
+  background: #fff;
+}
+
+.plate-cap { padding: 15px 16px 17px; }
+.plate-c {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.66;
+  color: var(--text-2);
+  max-width: 70ch;
+}
+.plate-src {
+  margin: 10px 0 0;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+  color: var(--text-3);
+  max-width: 78ch;
+}
+
+@media (max-width: 560px) {
+  .plate-bar { flex-wrap: wrap; gap: 8px; }
+  .plate-mount { padding: 12px; }
+  .plate-cap { padding: 13px 13px 15px; }
 }
 
 /* ============================================================
@@ -811,6 +919,10 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
 .g4 { gap: 4px; } .g6 { gap: 6px; } .g8 { gap: 8px; } .g10 { gap: 10px; }
 .g14 { gap: 14px; } .g18 { gap: 18px; } .g24 { gap: 24px; } .g34 { gap: 34px; }
 .mt8 { margin-top: 8px; } .mt14 { margin-top: 14px; } .mt20 { margin-top: 20px; }
+/* display headings now carry their own selection clearance as padding */
+.d1.mt20, .d2.mt20, .d3.mt20 { margin-top: 6px; }
+.d1.mt8, .d2.mt8, .d3.mt8 { margin-top: 0; }
+.d1.mt40, .d2.mt40, .d3.mt40 { margin-top: 26px; }
 .mt28 { margin-top: 28px; } .mt40 { margin-top: 40px; } .mt56 { margin-top: 56px; }
 .between { justify-content: space-between; }
 .center { align-items: center; }
@@ -833,9 +945,15 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
 @media print {
   @page { size: A4; margin: 12mm 12mm 12mm 12mm; }
 
+  /* The PDF exporter paints the page canvas from the UA colour scheme, so a
+     dark `color-scheme` on <html> printed a near-black frame in the @page
+     margins around the white content box. Force the light scheme in print. */
   html, body {
     background: #fff !important;
+    background-color: #fff !important;
     color: #111 !important;
+    color-scheme: light !important;
+    forced-color-adjust: none;
   }
   .nav, .foot, .grid-field, .caliper, .no-print { display: none !important; }
   main { display: block; }

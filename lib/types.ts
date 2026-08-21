@@ -25,6 +25,20 @@ export type Domain =
   | "research"
   | "tooling";
 
+/** A piece of visual evidence: something the project actually exported.
+ *  `tone: "paper"` is for white background technical drawings, which get
+ *  mounted on a light board instead of sitting on the dark panel. */
+export type Plate = {
+  src: string;
+  alt: string;
+  title: string;
+  caption: string;
+  provenance: Provenance;
+  source: string;
+  tone?: "dark" | "paper";
+  wide?: boolean;
+};
+
 export type Metric = {
   value: string;
   unit?: string;
@@ -53,6 +67,7 @@ export type Project = {
   wrong: string[];
   learned: string;
   scale?: { label: string; value: string }[];
+  plates?: Plate[];
   demo?: "matchledger" | "secaudit" | "tracer" | "spectrum" | "fusion";
   links?: { label: string; href: string }[];
   featured?: boolean;

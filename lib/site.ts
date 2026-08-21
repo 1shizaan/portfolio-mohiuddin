@@ -7,8 +7,8 @@ export const site = {
   phone: "+91 78424 49809",
   github: "https://github.com/1shizaan",
   githubHandle: "1shizaan",
-  linkedin: "https://www.linkedin.com/in/mohi-uddin",
-  linkedinHandle: "mohi-uddin",
+  linkedin: "https://www.linkedin.com/in/mohammed-mohi-uddin-13b818333/",
+  linkedinHandle: "mohammed-mohi-uddin-13b818333",
   debugai: "https://debugai.io",
   url: "https://mohiuddin.dev",
   thesis:

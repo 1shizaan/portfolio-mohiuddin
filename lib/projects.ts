@@ -96,6 +96,19 @@ export const projects: Project[] = [
       head: "Fusion is where accuracy is won or quietly lost",
       body: "Concatenating a 1,500 dimensional dense embedding with a 500 dimensional sparse TF-IDF vector lets the dense half dominate on scale alone. Getting 96.92 percent meant treating the join as a real modelling decision rather than a numpy call, and keeping the head linear so the contribution of each half stayed inspectable.",
     },
+    plates: [
+      {
+        src: "/plates/sscategorise-training.png",
+        alt: "Training and validation loss, and validation accuracy per epoch, for the vision only model",
+        title: "Vision only, twenty epochs",
+        caption:
+          "EfficientNet-B3 on images alone. Training loss keeps falling, validation loss flattens around 1.14 after epoch 7, and validation accuracy stops at 80.8 percent. That gap is the whole argument for adding the OCR channel, which is what moved the held-out figure to 96.92 percent.",
+        provenance: "MEASURED",
+        source: "training_curves.png from the v2 run. Best epoch marked at 80.8 percent.",
+        tone: "paper",
+        wide: true,
+      },
+    ],
     metrics: [
       {
         value: "96.92",
@@ -362,6 +375,49 @@ export const projects: Project[] = [
       head: "A wrong pin map that would have silently removed all battery protection",
       body: "The DW01A and FS8205A protection pairing had a mapping error that passed visual review. The circuit would have powered up, charged, discharged and behaved normally in every test, while providing no overcurrent or overdischarge protection at all. On a lithium cell against a person's head. It is entries 37 and 38 in the bug log, and it is the reason the validation guide refuses to let you skip the current limited smoke test.",
     },
+    plates: [
+      {
+        src: "/plates/optixon-pcb-top.png",
+        alt: "KiCad 3D render, component side of the OptiXon v1 flex rigid board",
+        title: "Component side, as the board file draws it",
+        caption:
+          "The 138 by 10.5mm four layer flex rigid outline. Battery tab at the hinge end on the left, the rigid island carrying the nRF52832 and the power path in the middle, the sensor tip on the right, two flex necks joining them. This is the fabrication geometry rendered, not a photograph of a board, because no board has been made.",
+        provenance: "DERIVED",
+        source: "kicad-cli 3D render of hardware/kicad/optixon-v1/optixon-v1.kicad_pcb.",
+        wide: true,
+      },
+      {
+        src: "/plates/optixon-pcb-bottom.png",
+        alt: "KiCad 3D render, sensor side of the OptiXon v1 board",
+        title: "Sensor side",
+        caption:
+          "The B face. It carries the MAX30102 optical window at the tip and the pads the antenna keepout is measured from. This is the face that sits against the head, which is why the thermal figure on this page is a projection and stays tagged as one.",
+        provenance: "DERIVED",
+        source: "Same board file, bottom view.",
+        wide: true,
+      },
+      {
+        src: "/plates/optixon-protection.png",
+        alt: "ngspice sweep comparing the original and corrected battery protection topology",
+        title: "Bug log 37, the sweep that caught it",
+        caption:
+          "Cell voltage swept from 2.0 to 4.5V through both topologies. Red is the original pin mapping: load current rises straight through both trip points, so protection never engages. Green is the corrected one, cutting off at 2.40V and clamping at 4.30V. The circuit that would have shipped looked healthy in every way except this one.",
+        provenance: "DERIVED",
+        source: "ngspice, design/05-simulation. A simulator agreeing is not a bench measurement.",
+        tone: "paper",
+      },
+      {
+        src: "/plates/optixon-enclosure.png",
+        alt: "Hidden line projection of the OptiXon temple enclosure, side profile and plan view",
+        title: "Enclosure fit check, side profile and plan",
+        caption:
+          "Hidden line projection out of the scripted FreeCAD model. Grey is the shell, green is the real PCB outline and thickness, red is each component clearance box at its real height. The drawing calls itself a concept and a first pass fit check, and it stays that way until something has been printed and test fitted.",
+        provenance: "DERIVED",
+        source:
+          "TechDraw projection of design/04-mechanical/optixon-v1-enclosure.step. Envelope 144.1 by 12.5 by 7.2mm, shell mass 2.55g per temple.",
+        tone: "paper",
+      },
+    ],
     metrics: [
       {
         value: "51",
@@ -765,6 +821,18 @@ export const projects: Project[] = [
       head: "Proving the whole chain actually works",
       body: "Every stage can look correct and still produce a font that will not install. The end to end test generates a synthetic photograph of a filled sheet, tilted, shadowed and noisy, drives a headless browser through the studio, downloads the OTF the app produced, and parses it back. That round trip is the only real proof, and it runs on every change.",
     },
+    plates: [
+      {
+        src: "/plates/inkline-sheet.jpg",
+        alt: "Synthetic photograph of a filled handwriting sheet, tilted, with four corner fiducials",
+        title: "What the scanner is handed",
+        caption:
+          "The synthetic sheet the end to end test photographs. Four corner fiducials, a perspective tilt, an uneven lighting gradient across the page. Find the markers, unwarp, segment the cells, then trace. Any stage getting it wrong fails the round trip and turns the test red.",
+        provenance: "DERIVED",
+        source: "test/fixtures/sheet-1.png, the fixture the Playwright round trip runs against.",
+        tone: "paper",
+      },
+    ],
     metrics: [
       {
         value: "4",

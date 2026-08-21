@@ -66,6 +66,7 @@ export default async function CaseStudy({
     { id: "problem", label: "Problem" },
     { id: "built", label: "Built" },
     { id: "hard", label: "Hard part" },
+    ...(p.plates?.length ? [{ id: "plates", label: "Evidence" }] : []),
     ...(p.demo ? [{ id: "demo", label: "Demo" }] : []),
     { id: "numbers", label: "Numbers" },
     { id: "wrong", label: "Got wrong" },
@@ -171,6 +172,44 @@ export default async function CaseStudy({
               </p>
             </Reveal>
           </section>
+
+
+          {/* ---- evidence: what the project actually exported ---- */}
+          {p.plates?.length ? (
+            <section id="plates" className="block">
+              <div className="block-l">
+                <span className="eyebrow">// the evidence</span>
+                <p className="mono muted mt20" style={{ fontSize: 10.5, lineHeight: 1.7, letterSpacing: "0.04em" }}>
+                  EXPORTED BY THE PROJECT ITSELF. CLICK A PLATE FOR FULL SIZE.
+                </p>
+              </div>
+              <div className="plates">
+                {p.plates.map((pl, i) => (
+                  <Reveal
+                    key={pl.src}
+                    as="figure"
+                    delay={i * 60}
+                    className={`plate${pl.wide ? " wide" : ""}`}
+                    data-tone={pl.tone ?? "dark"}
+                  >
+                    <div className="plate-bar">
+                      <span className="plate-n">PL.{String(i + 1).padStart(2, "0")}</span>
+                      <span className="plate-t">{pl.title}</span>
+                      <ProvStamp p={pl.provenance} />
+                    </div>
+                    <a className="plate-mount" href={pl.src} target="_blank" rel="noreferrer">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={pl.src} alt={pl.alt} loading="lazy" decoding="async" />
+                    </a>
+                    <figcaption className="plate-cap">
+                      <p className="plate-c">{pl.caption}</p>
+                      <p className="plate-src">{pl.source}</p>
+                    </figcaption>
+                  </Reveal>
+                ))}
+              </div>
+            </section>
+          ) : null}
 
           {/* ---- demo ---- */}
           {p.demo ? (

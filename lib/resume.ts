@@ -30,7 +30,7 @@ export const identity = {
   location: "Hyderabad, India",
   email: "t.d.m.mohi@gmail.com",
   phone: "+91 78424 49809",
-  linkedin: "linkedin.com/in/mohi-uddin",
+  linkedin: "linkedin.com/in/mohammed-mohi-uddin-13b818333",
   github: "github.com/1shizaan",
   site: "mohiuddin.dev",
 };
