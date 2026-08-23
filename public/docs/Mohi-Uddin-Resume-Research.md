@@ -16,7 +16,7 @@ Final year computer science student working on systems where **the failure mode 
 
 *Aug 2023 – Aug 2027 · Swami Vivekananda Institute of Technology, Hyderabad · CGPA 7.85 / 10 · top 25% of 120 students*
 
-- OptiXon feasibility work validated by **Prof. Nagender Kumar Suryadevara**, University of Hyderabad, and by M.Tech students at IIT Hyderabad.
+- OptiXon design reviewed with **M.Tech students at IIT Hyderabad** and a working hardware professional, who confirmed feasibility and suggested changes. Every design decision is my own.
 - Smart India Hackathon 2025, rural telemedicine PS25018. IIT Hyderabad certificates in Generative AI with ML and Data Science.
 
 ## Research projects

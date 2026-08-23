@@ -81,7 +81,7 @@ export default function About() {
               <ul className="cv-ul mt14">
                 <li>Second place, research paper competition, Techno Udbhav 2025, for OptiXon.</li>
                 <li>Smart India Hackathon 2025, team Glitch Guardians, rural telemedicine.</li>
-                <li>OptiXon feasibility validated by Prof. Nagender Kumar Suryadevara, University of Hyderabad.</li>
+                <li>OptiXon design reviewed with M.Tech students at IIT Hyderabad and a working hardware professional.</li>
                 <li>Generative AI with ML, Ethical Hacking, and Data Science certificates, IIT Hyderabad.</li>
               </ul>
             </div>

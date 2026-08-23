@@ -113,14 +113,21 @@ export default async function PrintDoc({
         <article className="print-doc">
           <h1 className="p-name">{identity.name}</h1>
           {/* real anchors, so the exported PDF carries clickable link annotations */}
+          {/* Labelled deeplinks rather than raw URLs. The href carries the full
+              address, so the link works and the line stays short enough to take
+              a portfolio URL alongside the other two. */}
           <div className="p-contact">
             {identity.location}<span className="sep">|</span>
             <a href={`mailto:${identity.email}`}>{identity.email}</a><span className="sep">|</span>
-            <a href={`tel:${identity.phone.replace(/\s/g, "")}`}>{identity.phone}</a>
-          </div>
-          <div className="p-contact p-contact-2">
-            <a href={`https://${identity.linkedin}`}>{identity.linkedin}</a><span className="sep">|</span>
-            <a href={`https://${identity.github}`}>{identity.github}</a>
+            <a href={`tel:${identity.phone.replace(/\s/g, "")}`}>{identity.phone}</a><span className="sep">|</span>
+            <a href={`https://${identity.linkedin}`}>LinkedIn</a><span className="sep">|</span>
+            <a href={`https://${identity.github}`}>GitHub</a>
+            {identity.siteIsLive ? (
+              <>
+                <span className="sep">|</span>
+                <a href={`https://${identity.site}`}>Portfolio</a>
+              </>
+            ) : null}
           </div>
           <div className="p-role">{doc.headline}</div>
           <p className="p-summary">{rich(doc.summary)}</p>

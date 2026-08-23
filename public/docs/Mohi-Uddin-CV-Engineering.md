@@ -140,8 +140,7 @@ I build systems that have to survive a real constraint, and I write down which n
 
 - Second place, research paper competition, Techno Udbhav 2025 inter college technical festival, for OptiXon health sensing eyewear.
 - Smart India Hackathon 2025, team Glitch Guardians, problem statement PS25018: telemedicine access for rural healthcare in Nabha, Punjab.
-- OptiXon feasibility documentation reviewed and validated by Prof. Nagender Kumar Suryadevara, University of Hyderabad, following review of the full technical analysis.
-- Circuit design and architecture reviewed across multiple sessions with M.Tech students at IIT Hyderabad and a working hardware professional.
+- OptiXon design and workflow reviewed across multiple sessions with M.Tech students at IIT Hyderabad and a working hardware professional, who confirmed feasibility and suggested changes. Every design, simulation and firmware decision is my own.
 - Certificates: Generative AI with Machine Learning, Ethical Hacking, and Data Science workshops, all IIT Hyderabad.
 
 ---

@@ -458,7 +458,7 @@ export const projects: Project[] = [
       "No prototype exists. Every performance number here is a calculation and is tagged as one. A design that has never met a soldering iron has not been validated, and calling the paper phase complete is not the same as calling the product real.",
     ],
     learned:
-      "Second place at Techno Udbhav 2025, an inter college research competition. The design was reviewed by M.Tech students at IIT Hyderabad, by a working circuit design professional, and by Prof. Nagender Kumar Suryadevara at the University of Hyderabad after he read the feasibility documentation. Going and asking is cheaper than being wrong for six months.",
+      "Second place at Techno Udbhav 2025, an inter college research competition. I showed the idea and the workflow to M.Tech students at IIT Hyderabad and to a working circuit design professional. Both said it was feasible and both suggested changes. A professor I wrote to never replied, which is the ordinary outcome and not a reason to stop. Going and asking is cheaper than being wrong for six months, and nobody supervised this: every decision in it is mine.",
     scale: [
       { label: "Generator and design code", value: "17,805 lines" },
       { label: "Documented findings", value: "51" },
