@@ -4,7 +4,7 @@ Hyderabad, India · t.d.m.mohi@gmail.com · +91 78424 49809 · linkedin.com/in/m
 
 **AI systems and backend engineer**
 
-Final year computer science student who ships. Launched a VS Code debugging product with 4,600+ downloads across three registries, on live payment infrastructure. Strongest at making expensive systems cheap: a reconciliation engine that replaced per row API calls with a blocked three pass matcher and does 100,000 rows against 98,000 in 4.25 seconds with zero API calls.
+Final year computer science student who ships. Launched a VS Code debugging product with 5,800+ downloads across three registries, on live payment infrastructure. Strongest at making expensive systems cheap: a reconciliation engine that replaced per row API calls with a blocked three pass matcher and does 100,000 rows against 98,000 in 4.25 seconds with zero API calls.
 
 ## Experience
 
@@ -12,7 +12,7 @@ Final year computer science student who ships. Launched a VS Code debugging prod
 
 *Feb 2026 – now · DebugAI · an AI debugger for VS Code, debugai.io*
 
-- Built and launched every layer of a five service monorepo: VS Code extension, Express gateway, FastAPI inference engine, Next.js dashboard, PostgreSQL with pgvector, Redis. 412 Marketplace installs, 4,600+ downloads across three registries, 815 commits, 329 engine tests passing.
+- Built and launched every layer of a five service monorepo: VS Code extension, Express gateway, FastAPI inference engine, Next.js dashboard, PostgreSQL with pgvector, Redis. 512 Marketplace installs, 5,800+ downloads across three registries, 879 commits, 519 engine tests passing.
 - Assembles context from a runtime stack trace: forced inclusion of traced files, then pgvector retrieval of related code the trace never names, inside a managed token budget. A SHA-256 Redis cache ahead of every model call, difficulty based routing, and a cross provider fallback that keeps the response shape identical during an outage.
 - Live billing on production keys: HMAC verified webhooks, idempotency on the provider event id, and a tier guard in the request path so an expired trial is enforced even when the cron that should have done it fails.
 
@@ -66,4 +66,4 @@ Final year computer science student who ships. Launched a VS Code debugging prod
 
 ---
 
-Resume, engineering track. Full case studies with sources at mohiuddin.dev.
+Resume, engineering track. Sources and code at github.com/1shizaan.

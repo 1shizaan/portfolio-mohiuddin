@@ -57,7 +57,9 @@ export async function GET(
   L.push("---");
   L.push("");
   L.push(
-    `${doc.kind}, ${doc.track} track. Full case studies with sources at ${identity.site}.`
+    `${doc.kind}, ${doc.track} track. Sources and code at ${
+      identity.siteIsLive ? identity.site : identity.github
+    }.`
   );
   L.push("");
 

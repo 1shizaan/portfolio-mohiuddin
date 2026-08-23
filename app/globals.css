@@ -962,6 +962,10 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
 .print-doc { display: none; }
 
 @media print {
+  /* Tracking above roughly 0.06em makes every PDF text extractor insert a
+     space between glyphs, so an applicant tracking system reads EXPERIENCE as
+     "E X P E R I E N C E" and cannot find the section at all. Everything
+     uppercase in this document stays at or under 0.02em for that reason. */
   @page { size: A4; margin: 12mm 12mm 12mm 12mm; }
 
   /* The PDF exporter paints the page canvas from the UA colour scheme, so a
@@ -1005,7 +1009,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
   .p-role {
     font-family: var(--mono);
     font-size: 7.6pt;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.02em;
     text-transform: uppercase;
     color: #8A5A00;
     margin-top: 7pt;
@@ -1023,7 +1027,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
   .p-sec-h {
     font-family: var(--mono);
     font-size: 7.2pt;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.02em;
     text-transform: uppercase;
     color: #16181D;
     border-bottom: 0.6pt solid #C9C6BC;
@@ -1041,7 +1045,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
   .p-when {
     font-family: var(--mono);
     font-size: 7.2pt;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.02em;
     color: #5A5E66;
     text-transform: uppercase;
     padding-top: 1.2pt;
@@ -1051,7 +1055,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
   .p-tag {
     font-family: var(--mono);
     font-size: 6.6pt;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.02em;
     text-transform: uppercase;
     border: 0.6pt solid #8A5A00;
     color: #8A5A00;
@@ -1093,7 +1097,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
   .p-skill-g {
     font-family: var(--mono);
     font-size: 7.2pt;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.02em;
     text-transform: uppercase;
     color: #5A5E66;
   }
@@ -1111,7 +1115,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
     border-top: 0.6pt solid #C9C6BC;
     font-family: var(--mono);
     font-size: 6.8pt;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.02em;
     color: #6A6E75;
     text-transform: uppercase;
   }

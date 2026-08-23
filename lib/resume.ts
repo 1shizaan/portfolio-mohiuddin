@@ -33,6 +33,10 @@ export const identity = {
   linkedin: "linkedin.com/in/mohammed-mohi-uddin-13b818333",
   github: "github.com/1shizaan",
   site: "mohiuddin.dev",
+  /* mohiuddin.dev is registered to somebody else and serves their page, so the
+     documents must not send a reader there. Flip this to true only once the
+     domain in `site.url` is actually bought and the site is deployed. */
+  siteIsLive: false,
 };
 
 /* ============================================================
@@ -91,7 +95,7 @@ const ENG_RESUME: Doc = {
   audience: "AI engineering, backend and full stack roles at startups and product companies.",
   headline: "AI systems and backend engineer",
   summary:
-    "Final year computer science student who ships. Launched a VS Code debugging product with 4,600+ downloads across three registries, on live payment infrastructure. Strongest at making expensive systems cheap: a reconciliation engine that replaced per row API calls with a blocked three pass matcher and does 100,000 rows against 98,000 in 4.25 seconds with zero API calls.",
+    "Final year computer science student who ships. Launched a VS Code debugging product with 5,800+ downloads across three registries, on live payment infrastructure. Strongest at making expensive systems cheap: a reconciliation engine that replaced per row API calls with a blocked three pass matcher and does 100,000 rows against 98,000 in 4.25 seconds with zero API calls.",
   sections: [
     {
       title: "Experience",
@@ -103,7 +107,7 @@ const ENG_RESUME: Doc = {
           sub: "DebugAI · an AI debugger for VS Code, debugai.io",
           tag: "Launched",
           bullets: [
-            "Built and launched every layer of a five service monorepo: VS Code extension, Express gateway, FastAPI inference engine, Next.js dashboard, PostgreSQL with pgvector, Redis. 412 Marketplace installs, 4,600+ downloads across three registries, 815 commits, 329 engine tests passing.",
+            "Built and launched every layer of a five service monorepo: VS Code extension, Express gateway, FastAPI inference engine, Next.js dashboard, PostgreSQL with pgvector, Redis. 512 Marketplace installs, 5,800+ downloads across three registries, 879 commits, 519 engine tests passing.",
             "Assembles context from a runtime stack trace: forced inclusion of traced files, then pgvector retrieval of related code the trace never names, inside a managed token budget. A SHA-256 Redis cache ahead of every model call, difficulty based routing, and a cross provider fallback that keeps the response shape identical during an outage.",
             "Live billing on production keys: HMAC verified webhooks, idempotency on the provider event id, and a tier guard in the request path so an expired trial is enforced even when the cron that should have done it fails.",
           ],
@@ -205,13 +209,13 @@ const ENG_CV: Doc = {
           tag: "Launched Jun 2026",
           bullets: [
             "Designed and shipped every layer: a VS Code extension, an Express API gateway, a FastAPI inference engine, a Next.js dashboard and marketing site, PostgreSQL with pgvector, Redis, and the deployment pipeline across Vercel and Railway.",
-            "412 VS Code Marketplace installs and 4,600+ combined downloads across VS Code, Open VSX and npm, verified against the live registry APIs. Installs and downloads are separate metrics and only one of them sums.",
+            "512 VS Code Marketplace installs and 5,800+ combined downloads across VS Code, Open VSX and npm, verified against the live registry APIs on 23 August 2026. Installs and downloads are separate metrics and only one of them sums.",
             "Context assembly: parse the stack trace, force inclusion of the files it names, then retrieve related code the trace never mentions using pgvector embeddings over the repository, inside a managed token budget. A second retrieval pass runs when the model reports missing context, under a 40 second deadline with a fallback to the first pass result.",
             "Cost control: a SHA-256 cache key over error text, project and framework hint checked in Redis before any model call, plus difficulty based routing between a small and a large model and a cross provider fallback that preserves the response shape on an upstream 429 or 503.",
             "Error memory: a SHA-256 signature per error, recurrence tracked per project, and a fix confirmed by a human promoted to lead the next answer for that signature. Project scoped only, so a fix never leaks across users.",
             "Billing on production payment keys: raw body HMAC verification before the JSON parser, two phase idempotency keyed on the provider event id, and an effective tier guard evaluated in the request path so an expired trial is enforced even when the hourly cron fails. That cron did fail once, pointed at the wrong host, and returned 404 for days.",
             "Security posture: session identifiers in Redis rather than the secret in a cookie, constant time secret comparison, a CSRF gate bound to the same middleware that grants admin authority, and a fail closed policy when the session store is unavailable.",
-            "815 commits between February and August 2026. 329 engine tests, 32 API test suites, 43 written session logs, and continuous integration on every push.",
+            "879 commits between February and August 2026. 519 engine tests, 32 API test suites, 44 written session logs, and continuous integration on every push.",
           ],
           tech: "TypeScript, Python, Next.js 15, Express, FastAPI, PostgreSQL, pgvector, Redis, Docker, nginx, Railway, Vercel, Paddle",
         },

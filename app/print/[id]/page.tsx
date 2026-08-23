@@ -1,8 +1,29 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { DOCS, docById, identity } from "@/lib/resume";
 import type { CVSection } from "@/lib/resume";
 
 export const dynamicParams = false;
+
+/* Chromium writes the document title into the PDF's title field, which is what
+   a reader sees in their viewer tab and what some parsers read first. Without
+   this it inherits the site's tagline, which is not what this file is. */
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const doc = docById(id);
+  if (!doc) return { title: { absolute: identity.name } };
+  const track = doc.track === "research" ? "Research" : "Engineering";
+  return {
+    title: { absolute: `${identity.name} · ${doc.kind} · ${track}` },
+    description: doc.headline,
+    authors: [{ name: identity.name }],
+    robots: { index: false, follow: false },
+  };
+}
 
 export function generateStaticParams() {
   return DOCS.map((d) => ({ id: d.id }));
@@ -66,9 +87,13 @@ export default async function PrintDoc({
       <div className="shell" style={{ maxWidth: 880 }}>
         <article className="print-doc">
           <h1 className="p-name">{identity.name}</h1>
+          {/* real anchors, so the exported PDF carries clickable link annotations */}
           <div className="p-contact">
-            {identity.location} &nbsp;·&nbsp; {identity.email} &nbsp;·&nbsp; {identity.phone}
-            &nbsp;·&nbsp; {identity.linkedin} &nbsp;·&nbsp; {identity.github}
+            {identity.location} &nbsp;·&nbsp;{" "}
+            <a href={`mailto:${identity.email}`}>{identity.email}</a> &nbsp;·&nbsp;{" "}
+            <a href={`tel:${identity.phone.replace(/\s/g, "")}`}>{identity.phone}</a> &nbsp;·&nbsp;{" "}
+            <a href={`https://${identity.linkedin}`}>{identity.linkedin}</a> &nbsp;·&nbsp;{" "}
+            <a href={`https://${identity.github}`}>{identity.github}</a>
           </div>
           <div className="p-role">{doc.headline}</div>
           <p className="p-summary">{doc.summary}</p>
@@ -78,7 +103,8 @@ export default async function PrintDoc({
 
           {doc.kind === "CV" ? (
             <div className="p-foot">
-              {doc.kind} · {doc.track} track · Full case studies with sources at {identity.site}
+              {doc.kind} · {doc.track} track · Sources and code at{" "}
+              {identity.siteIsLive ? identity.site : identity.github}
             </div>
           ) : null}
         </article>

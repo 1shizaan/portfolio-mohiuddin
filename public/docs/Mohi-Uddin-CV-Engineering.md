@@ -13,13 +13,13 @@ I build systems that have to survive a real constraint, and I write down which n
 *Feb 2026 – present · DebugAI · an AI debugger for VS Code, debugai.io*
 
 - Designed and shipped every layer: a VS Code extension, an Express API gateway, a FastAPI inference engine, a Next.js dashboard and marketing site, PostgreSQL with pgvector, Redis, and the deployment pipeline across Vercel and Railway.
-- 412 VS Code Marketplace installs and 4,600+ combined downloads across VS Code, Open VSX and npm, verified against the live registry APIs. Installs and downloads are separate metrics and only one of them sums.
+- 512 VS Code Marketplace installs and 5,800+ combined downloads across VS Code, Open VSX and npm, verified against the live registry APIs on 23 August 2026. Installs and downloads are separate metrics and only one of them sums.
 - Context assembly: parse the stack trace, force inclusion of the files it names, then retrieve related code the trace never mentions using pgvector embeddings over the repository, inside a managed token budget. A second retrieval pass runs when the model reports missing context, under a 40 second deadline with a fallback to the first pass result.
 - Cost control: a SHA-256 cache key over error text, project and framework hint checked in Redis before any model call, plus difficulty based routing between a small and a large model and a cross provider fallback that preserves the response shape on an upstream 429 or 503.
 - Error memory: a SHA-256 signature per error, recurrence tracked per project, and a fix confirmed by a human promoted to lead the next answer for that signature. Project scoped only, so a fix never leaks across users.
 - Billing on production payment keys: raw body HMAC verification before the JSON parser, two phase idempotency keyed on the provider event id, and an effective tier guard evaluated in the request path so an expired trial is enforced even when the hourly cron fails. That cron did fail once, pointed at the wrong host, and returned 404 for days.
 - Security posture: session identifiers in Redis rather than the secret in a cookie, constant time secret comparison, a CSRF gate bound to the same middleware that grants admin authority, and a fail closed policy when the session store is unavailable.
-- 815 commits between February and August 2026. 329 engine tests, 32 API test suites, 43 written session logs, and continuous integration on every push.
+- 879 commits between February and August 2026. 519 engine tests, 32 API test suites, 44 written session logs, and continuous integration on every push.
 
 `TypeScript, Python, Next.js 15, Express, FastAPI, PostgreSQL, pgvector, Redis, Docker, nginx, Railway, Vercel, Paddle`
 
@@ -146,4 +146,4 @@ I build systems that have to survive a real constraint, and I write down which n
 
 ---
 
-CV, engineering track. Full case studies with sources at mohiuddin.dev.
+CV, engineering track. Sources and code at github.com/1shizaan.

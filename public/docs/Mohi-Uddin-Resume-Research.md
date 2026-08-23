@@ -60,4 +60,4 @@ Signal recovery under motion and noise, and trust gates that discard corrupted m
 
 ---
 
-Resume, research track. Full case studies with sources at mohiuddin.dev.
+Resume, research track. Sources and code at github.com/1shizaan.

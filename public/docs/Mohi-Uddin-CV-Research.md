@@ -144,4 +144,4 @@ Available for twelve or more weeks full time in summer 2027, willing to relocate
 
 ---
 
-CV, research track. Full case studies with sources at mohiuddin.dev.
+CV, research track. Sources and code at github.com/1shizaan.
