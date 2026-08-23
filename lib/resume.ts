@@ -95,7 +95,7 @@ const ENG_RESUME: Doc = {
   audience: "AI engineering, backend and full stack roles at startups and product companies.",
   headline: "AI systems and backend engineer",
   summary:
-    "Final year computer science student who ships. Launched a VS Code debugging product with 5,800+ downloads across three registries, on live payment infrastructure. Strongest at making expensive systems cheap: a reconciliation engine that replaced per row API calls with a blocked three pass matcher and does 100,000 rows against 98,000 in 4.25 seconds with zero API calls.",
+    "Final year computer science student who ships. Launched **DebugAI**, a VS Code debugger with **5,800+ downloads** across three registries. Strongest at making expensive systems cheap: a reconciliation engine that replaced per row API calls with a blocked matcher and does **100,000 rows in 4.25 seconds** with zero API calls.",
   sections: [
     {
       title: "Experience",
@@ -107,18 +107,18 @@ const ENG_RESUME: Doc = {
           sub: "DebugAI · an AI debugger for VS Code, debugai.io",
           tag: "Launched",
           bullets: [
-            "Built and launched every layer of a five service monorepo: VS Code extension, Express gateway, FastAPI inference engine, Next.js dashboard, PostgreSQL with pgvector, Redis. 512 Marketplace installs, 5,800+ downloads across three registries, 879 commits, 519 engine tests passing.",
-            "Assembles context from a runtime stack trace: forced inclusion of traced files, then pgvector retrieval of related code the trace never names, inside a managed token budget. A SHA-256 Redis cache ahead of every model call, difficulty based routing, and a cross provider fallback that keeps the response shape identical during an outage.",
-            "Live billing on production keys: HMAC verified webhooks, idempotency on the provider event id, and a tier guard in the request path so an expired trial is enforced even when the cron that should have done it fails.",
+            "Built and shipped every layer of a **five service monorepo**: VS Code extension, Express gateway, FastAPI inference engine, Next.js dashboard, PostgreSQL with pgvector, Redis.",
+            "**512 Marketplace installs, 5,800+ downloads** across three registries, 879 commits, 519 engine tests passing.",
+            "**Context assembly** from a stack trace: traced files forced in, then pgvector retrieval of code the trace never names, inside a token budget. SHA-256 cache, difficulty based routing, and a cross provider fallback that holds the response shape during an outage.",
+            "**Live billing** on production keys: HMAC verified webhooks, idempotency on the provider event id, and a tier guard that enforces an expired trial even when the cron fails.",
           ],
-          tech: "TypeScript, Python, Next.js, Express, FastAPI, PostgreSQL, pgvector, Redis, Docker, Railway, Vercel",
         },
         {
           when: "Jun – Jul 2025",
           title: "Summer Training Intern, Generative AI with ML",
           sub: "RemarkSkill Education with IIT Hyderabad",
           bullets: [
-            "Built a retrieval augmented question answering system and found that chunk boundaries, not prompt wording, decided answer quality. Recognised at close for technical soundness and collaboration.",
+            "Built a **retrieval augmented QA system** and found that chunk boundaries, not prompt wording, decided answer quality. Recognised at close for technical soundness.",
           ],
         },
       ],
@@ -131,28 +131,22 @@ const ENG_RESUME: Doc = {
           when: "May 2025 – now",
           title: "MatchLedger AI · bank reconciliation engine",
           bullets: [
-            "Three passes ordered by cost: a vectorised hash join, a date tolerance pass, then fuzzy narration similarity on the remainder, blocked by amount bucket and date window. 100,000 against 98,000 rows in 4.25 seconds, 95% match rate, zero API calls, zero mismatches against ground truth. Unblocked the same job is a 9.8 billion comparison cross product. FastAPI, Celery, Redis, PostgreSQL, React, Docker.",
+            "**Three passes ordered by cost**: a vectorised hash join, a date tolerance pass, then fuzzy narration similarity on the remainder, blocked by amount bucket and date window.",
+            "**100,000 against 98,000 rows in 4.25 seconds**, 95% matched, zero mismatches against ground truth. Unblocked the same job is a 9.8 billion comparison. FastAPI, Celery, Redis, PostgreSQL.",
           ],
         },
         {
           when: "2024, rebuilt 2026",
           title: "SS Categorise · multimodal classifier",
           bullets: [
-            "Fused an EfficientNet-B3 embedding with a 500 term TF-IDF vector over OCR text: 96.92% on a 260 image held-out set across 20 classes. The gain over the single model version came from the confusion matrix showing a missing input channel, not an underfitted model. PyTorch, scikit-learn.",
+            "Fused an **EfficientNet-B3** embedding with a 500 term TF-IDF vector over OCR text: **96.92%** on a 260 image held-out set across 20 classes. The gain came from a confusion matrix showing a missing input channel, not from more capacity.",
           ],
         },
         {
           when: "Aug 2026",
-          title: "Inkline · handwriting to installable font, fully client side",
+          title: "Inkline · handwriting to installable font",
           bullets: [
-            "Homography un-warp of a photographed sheet, then a Moore boundary tracer and Schneider cubic fitter written from scratch because Potrace is GPL and would attach itself to every font made with the tool. Proven by a headless browser test that downloads the generated OTF and parses it back. TypeScript, Next.js, Canvas, Playwright.",
-          ],
-        },
-        {
-          when: "Mar 2026",
-          title: "SecAudit · static security scanner, zero dependencies",
-          bullets: [
-            "One standard library Python file, 60+ rules mapped to the OWASP Top 10 across six languages, 12,000 lines scanned in under two seconds with no network and no upload.",
+            "Homography un-warp of a photographed sheet, then a **Moore boundary tracer and Schneider cubic fitter written from scratch** because Potrace is GPL and would attach itself to every font the tool makes. A headless browser test downloads the OTF and parses it back.",
           ],
         },
       ],
@@ -162,8 +156,8 @@ const ENG_RESUME: Doc = {
       kind: "skills",
       skills: [
         { group: "Languages", items: "Python, TypeScript, JavaScript, C, SQL" },
-        { group: "Backend, ML", items: "FastAPI, Express, Node.js, Celery, Redis, PostgreSQL, pgvector · PyTorch, TensorFlow, scikit-learn, OpenCV, embeddings and retrieval" },
-        { group: "Frontend, infra", items: "React, Next.js App Router, Canvas · Docker, AWS EC2, Railway, Vercel, nginx, GitHub Actions, Sentry, OWASP Top 10" },
+        { group: "Backend and ML", items: "FastAPI, Express, Node.js, Celery, Redis, PostgreSQL, pgvector, PyTorch, scikit-learn, OpenCV" },
+        { group: "Infrastructure", items: "React, Next.js, Docker, AWS EC2, Railway, Vercel, nginx, GitHub Actions, Sentry, OWASP Top 10" },
       ],
     },
     {
@@ -175,7 +169,7 @@ const ENG_RESUME: Doc = {
           title: "B.Tech, Computer Science Engineering (Data Science)",
           sub: "Swami Vivekananda Institute of Technology, Hyderabad",
           bullets: [
-            "Second place, research paper competition, Techno Udbhav 2025, for OptiXon health sensing eyewear. Smart India Hackathon 2025, rural telemedicine. Certificates in Generative AI with ML, Ethical Hacking and Data Science, IIT Hyderabad.",
+            "**Second place, Techno Udbhav 2025** research paper competition, for OptiXon health sensing eyewear. Smart India Hackathon 2025. IIT Hyderabad certificates in Generative AI with ML and Data Science.",
           ],
         },
       ],
@@ -348,15 +342,15 @@ const RES_RESUME: Doc = {
   audience: "Summer research programmes, lab internships, and research group applications.",
   headline: "Signal processing and efficient ML under constraint",
   summary:
-    "Final year computer science student working on systems where the failure mode matters more than the headline metric. Interested in deterministic baselines with learned augmentation, uncertainty and provenance in model outputs, and hardware software co-design for embedded sensing. Available full time for twelve or more weeks in summer 2027, willing to relocate.",
+    "Final year computer science student working on systems where **the failure mode matters more than the headline metric**. Available full time for twelve or more weeks in **summer 2027**, willing to relocate.",
   sections: [
     {
       title: "Research interests",
       kind: "text",
-      text: "Signal recovery under motion and noise, and trust gates that discard corrupted measurements rather than smoothing over them. Cost efficient inference: when a learned component earns its compute against a deterministic baseline. Uncertainty and provenance in generated or reconstructed outputs. Hardware software co-design under power and thermal constraint.",
+      text: "**Signal recovery under motion and noise**, and trust gates that discard corrupted measurements rather than smoothing over them. **Cost efficient inference**: when a learned component earns its compute against a deterministic baseline. **Uncertainty and provenance** in generated or reconstructed outputs.",
     },
     {
-      title: "Education",
+      title: "Education and recognition",
       kind: "entries",
       entries: [
         {
@@ -364,7 +358,8 @@ const RES_RESUME: Doc = {
           title: "B.Tech, Computer Science Engineering (Data Science)",
           sub: "Swami Vivekananda Institute of Technology, Hyderabad · CGPA 7.85 / 10 · top 25% of 120 students",
           bullets: [
-            "Machine learning, artificial intelligence, computer vision, natural language processing, algorithms, database systems, probability and statistics.",
+            "OptiXon feasibility work validated by **Prof. Nagender Kumar Suryadevara**, University of Hyderabad, and by M.Tech students at IIT Hyderabad.",
+            "Smart India Hackathon 2025, rural telemedicine PS25018. IIT Hyderabad certificates in Generative AI with ML and Data Science.",
           ],
         },
       ],
@@ -378,8 +373,8 @@ const RES_RESUME: Doc = {
           title: "OptiXon · photoplethysmography in prescription eyewear",
           sub: "Founder and technical lead · Second place, Techno Udbhav 2025 research competition",
           bullets: [
-            "Continuous heart rate sensing from the superficial temporal artery through a sensor in an eyeglass temple, where the dominant problem is motion artifact rather than sensor selection. The inertial unit acts as a trust gate: the gyroscope flags the corrupted window before processing, so bad samples are discarded rather than averaged into a confident wrong reading.",
-            "Verified the lithium protection circuit at three independent levels after finding a pin mapping error that would have defeated all protection while passing every functional test. Validated by Prof. Nagender Kumar Suryadevara, University of Hyderabad. Battery and thermal figures are design estimates, labelled as such, since no prototype exists.",
+            "Continuous heart rate from the superficial temporal artery through a sensor in an eyeglass temple, where **motion artifact, not sensor selection, is the dominant problem**. The IMU acts as a trust gate: the gyroscope flags a corrupted window before processing, so bad samples are discarded rather than averaged into a confident wrong reading.",
+            "Verified the lithium protection circuit at **three independent levels** after finding a pin mapping error that would have defeated all protection while passing every functional test. Battery and thermal figures are design estimates and labelled as such, since no prototype exists.",
           ],
           tech: "nRF52832, MAX30102 PPG, LSM6DSOX IMU, KiCad, ngspice, C",
         },
@@ -387,21 +382,21 @@ const RES_RESUME: Doc = {
           when: "2024, rebuilt 2026",
           title: "Multimodal classification under a small label budget",
           bullets: [
-            "Fused a convolutional image embedding with a sparse TF-IDF representation of OCR text, classified by logistic regression: 96.92% across 20 classes on a 260 image held-out set, from 1,297 labelled examples. The improvement over a single vision model came from error analysis rather than capacity, and the head was kept linear so each modality's contribution stayed inspectable. PyTorch, EfficientNet-B3, scikit-learn.",
+            "Fused a convolutional image embedding with a sparse TF-IDF representation of OCR text under a linear head: **96.92% across 20 classes** on a 260 image held-out set, from 1,297 labelled examples. The gain came from **error analysis rather than capacity**, and the linear head kept each modality inspectable.",
           ],
         },
         {
           when: "May 2025 – now",
           title: "Deterministic matching with selective learned fallback",
           bullets: [
-            "Where a learned matcher earns its cost against a rule based one, tested on transaction reconciliation because ground truth is constructible and unexplainable matches are unusable. Blocking reduced a 9.8 billion pair comparison to a tractable candidate set: 95% match rate, zero mismatches against a synthetic answer key, 4.25 seconds at 100,000 records, zero inference calls.",
+            "Where a learned matcher earns its cost against a rule based one, tested on transaction reconciliation because ground truth is constructible. **Blocking reduced a 9.8 billion pair comparison** to a tractable candidate set: 95% matched, zero mismatches against a synthetic answer key, 4.25 seconds at 100,000 records, zero inference calls.",
           ],
         },
         {
           when: "Jun – Jul 2025",
           title: "Retrieval augmented generation · IIT Hyderabad summer programme",
           bullets: [
-            "Found chunk boundary selection, not prompt design, dominated answer quality, and that retrieval failure produced fluent confident wrong answers with no distinguishing signal. That observation drove later work on explicit verification state in a deployed system.",
+            "Found **chunk boundary selection, not prompt design, dominated answer quality**, and that retrieval failure produced fluent confident wrong answers with no distinguishing signal. That observation drove later work on explicit verification state in a deployed system.",
           ],
         },
       ],
@@ -411,16 +406,8 @@ const RES_RESUME: Doc = {
       kind: "skills",
       skills: [
         { group: "Programming", items: "Python (primary), TypeScript, C, SQL" },
-        { group: "ML, signals", items: "PyTorch, TensorFlow, scikit-learn, OpenCV, embeddings and retrieval, evaluation design · PPG and IMU processing, motion artifact rejection, ngspice, KiCad, nRF52, power budgeting" },
-        { group: "Mathematics", items: "Linear algebra, probability and statistics, optimisation, numerical methods. Learning: uncertainty quantification, probabilistic machine learning" },
-      ],
-    },
-    {
-      title: "Recognition",
-      kind: "list",
-      list: [
-        "OptiXon feasibility documentation reviewed and validated by Prof. Nagender Kumar Suryadevara, University of Hyderabad, and by M.Tech students at IIT Hyderabad across multiple sessions.",
-        "Smart India Hackathon 2025, rural telemedicine PS25018. Certificates in Generative AI with ML, Ethical Hacking and Data Science, IIT Hyderabad. English fluent, Hindi native.",
+        { group: "ML and signals", items: "PyTorch, TensorFlow, scikit-learn, OpenCV, embeddings and retrieval, evaluation design, PPG and IMU processing, motion artifact rejection, ngspice, KiCad, nRF52" },
+        { group: "Mathematics", items: "Linear algebra, probability and statistics, optimisation, numerical methods." },
       ],
     },
   ],

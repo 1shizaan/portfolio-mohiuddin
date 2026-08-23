@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Sora, JetBrains_Mono } from "next/font/google";
+import { Instrument_Serif, Sora, JetBrains_Mono, Source_Serif_4 } from "next/font/google";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { site } from "@/lib/site";
@@ -17,6 +17,20 @@ const ui = Sora({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
   variable: "--font-ui",
+  display: "swap",
+});
+
+/* the document face. Static weights, so it embeds as a real TrueType subset in
+   the exported PDF rather than as Type3 glyph procedures. Only the print and
+   resume routes reference it, so no other page pays for it. */
+const doc = Source_Serif_4({
+  subsets: ["latin"],
+  /* 600 only. Asking for a weight the loader does not deliver makes Chromium
+     synthesise the bold, and a synthesised bold exports with gaps inside the
+     words: "B.Te ch, Compute r Scie nce". That is unreadable to a parser. */
+  weight: ["400", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-doc",
   display: "swap",
 });
 
@@ -47,7 +61,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${ui.variable} ${mono.variable}`}>
+    <html lang="en" className={`${display.variable} ${ui.variable} ${mono.variable} ${doc.variable}`}>
       <body>
         <div className="grid-field" aria-hidden="true" />
         <Nav />

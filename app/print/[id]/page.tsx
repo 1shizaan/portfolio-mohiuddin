@@ -29,45 +29,70 @@ export function generateStaticParams() {
   return DOCS.map((d) => ({ id: d.id }));
 }
 
+/* Bullets may carry **bold** around the thing a reader should catch when
+   skimming. Kept to a marker rather than markup so the same string still
+   renders as plain text in the markdown twin. */
+function rich(text: string) {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
+    part.startsWith("**") && part.endsWith("**") ? (
+      <strong key={i}>{part.slice(2, -2)}</strong>
+    ) : (
+      <span key={i}>{part}</span>
+    )
+  );
+}
+
+/* "MatchLedger AI · bank reconciliation engine" sets the name in bold and the
+   description after it in normal weight, the way a printed resume does. */
+function splitTitle(title: string) {
+  const i = title.indexOf(" · ");
+  if (i === -1) return { head: title, tail: "" };
+  return { head: title.slice(0, i), tail: title.slice(i + 3) };
+}
+
 function SectionBlock({ s }: { s: CVSection }) {
   return (
     <section className="p-sec">
       <div className="p-sec-h">{s.title}</div>
 
-      {s.kind === "text" ? <p className="p-text">{s.text}</p> : null}
+      {s.kind === "text" ? <p className="p-text">{rich(s.text)}</p> : null}
 
       {s.kind === "list" ? (
         <ul className="p-ul">
-          {s.list.map((l, i) => <li key={i}>{l}</li>)}
+          {s.list.map((l, i) => <li key={i}>{rich(l)}</li>)}
         </ul>
       ) : null}
 
       {s.kind === "skills"
         ? s.skills.map((g) => (
             <div key={g.group} className="p-skill">
-              <div className="p-skill-g">{g.group}</div>
-              <div className="p-skill-i">{g.items}</div>
+              <span className="p-skill-g">{g.group}: </span>
+              <span className="p-skill-i">{rich(g.items)}</span>
             </div>
           ))
         : null}
 
       {s.kind === "entries"
-        ? s.entries.map((e, i) => (
-            <div key={i} className="p-entry">
-              <div className="p-when">{e.when}</div>
-              <div>
-                <div className="p-title">
-                  {e.title}
-                  {e.tag ? <span className="p-tag">{e.tag}</span> : null}
+        ? s.entries.map((e, i) => {
+            const { head, tail } = splitTitle(e.title);
+            return (
+              <div key={i} className="p-entry">
+                <div className="p-entry-head">
+                  <span className="p-title">
+                    <strong>{head}</strong>
+                    {tail ? <span className="p-title-2"> · {tail}</span> : null}
+                    {e.tag ? <span className="p-tag">{e.tag}</span> : null}
+                  </span>
+                  <span className="p-when">{e.when}</span>
                 </div>
                 {e.sub ? <div className="p-sub">{e.sub}</div> : null}
                 <ul className="p-ul">
-                  {e.bullets.map((b, k) => <li key={k}>{b}</li>)}
+                  {e.bullets.map((b, k) => <li key={k}>{rich(b)}</li>)}
                 </ul>
                 {e.tech ? <div className="p-tech">{e.tech}</div> : null}
               </div>
-            </div>
-          ))
+            );
+          })
         : null}
     </section>
   );
@@ -89,14 +114,16 @@ export default async function PrintDoc({
           <h1 className="p-name">{identity.name}</h1>
           {/* real anchors, so the exported PDF carries clickable link annotations */}
           <div className="p-contact">
-            {identity.location} &nbsp;·&nbsp;{" "}
-            <a href={`mailto:${identity.email}`}>{identity.email}</a> &nbsp;·&nbsp;{" "}
-            <a href={`tel:${identity.phone.replace(/\s/g, "")}`}>{identity.phone}</a> &nbsp;·&nbsp;{" "}
-            <a href={`https://${identity.linkedin}`}>{identity.linkedin}</a> &nbsp;·&nbsp;{" "}
+            {identity.location}<span className="sep">|</span>
+            <a href={`mailto:${identity.email}`}>{identity.email}</a><span className="sep">|</span>
+            <a href={`tel:${identity.phone.replace(/\s/g, "")}`}>{identity.phone}</a>
+          </div>
+          <div className="p-contact p-contact-2">
+            <a href={`https://${identity.linkedin}`}>{identity.linkedin}</a><span className="sep">|</span>
             <a href={`https://${identity.github}`}>{identity.github}</a>
           </div>
           <div className="p-role">{doc.headline}</div>
-          <p className="p-summary">{doc.summary}</p>
+          <p className="p-summary">{rich(doc.summary)}</p>
           <hr className="p-hr" />
 
           {doc.sections.map((s, i) => <SectionBlock key={i} s={s} />)}

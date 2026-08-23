@@ -15,7 +15,7 @@ function Section({ s }: { s: CVSection }) {
 
       {s.kind === "list" ? (
         <ul className="cv-ul">
-          {s.list.map((l, i) => <li key={i}>{l}</li>)}
+          {s.list.map((l, i) => <li key={i}>{rich(l)}</li>)}
         </ul>
       ) : null}
 
@@ -24,7 +24,7 @@ function Section({ s }: { s: CVSection }) {
           {s.skills.map((g) => (
             <div key={g.group} className="cv-row" style={{ padding: "13px 0" }}>
               <span className="cv-when">{g.group}</span>
-              <span style={{ fontSize: 14.5, color: "var(--text-2)", lineHeight: 1.6 }}>{g.items}</span>
+              <span style={{ fontSize: 14.5, color: "var(--text-2)", lineHeight: 1.6 }}>{rich(g.items)}</span>
             </div>
           ))}
         </div>
@@ -42,7 +42,7 @@ function Section({ s }: { s: CVSection }) {
                 </div>
                 {e.sub ? <div className="cv-sub">{e.sub}</div> : null}
                 <ul className="cv-ul">
-                  {e.bullets.map((b, k) => <li key={k}>{b}</li>)}
+                  {e.bullets.map((b, k) => <li key={k}>{rich(b)}</li>)}
                 </ul>
                 {e.tech ? (
                   <div className="mono muted" style={{ fontSize: 11, marginTop: 10, lineHeight: 1.65 }}>
@@ -55,6 +55,18 @@ function Section({ s }: { s: CVSection }) {
         </div>
       ) : null}
     </section>
+  );
+}
+
+/* the same **bold** marker the print document uses, so a bullet reads the same
+   way on the page, in the PDF and in the markdown twin */
+function rich(text: string) {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
+    part.startsWith("**") && part.endsWith("**") ? (
+      <strong key={i} style={{ fontWeight: 600, color: "var(--text)" }}>{part.slice(2, -2)}</strong>
+    ) : (
+      <span key={i}>{part}</span>
+    )
   );
 }
 
@@ -111,7 +123,7 @@ export default function ResumeView() {
         <p className="mono mt20" style={{ fontSize: 12, color: "var(--amber)", letterSpacing: "0.08em", textTransform: "uppercase" }}>
           {doc.headline}
         </p>
-        <p className="prose lead mt14" style={{ fontSize: 16.5 }}>{doc.summary}</p>
+        <p className="prose lead mt14" style={{ fontSize: 16.5 }}>{rich(doc.summary)}</p>
 
         <p className="mono muted mt20" style={{ fontSize: 11, lineHeight: 1.7 }}>
           Sent to: {doc.audience}

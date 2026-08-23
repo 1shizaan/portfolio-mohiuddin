@@ -36,6 +36,8 @@
   --display: var(--font-display), "Times New Roman", serif;
   --ui: var(--font-ui), system-ui, -apple-system, sans-serif;
   --mono: var(--font-mono), ui-monospace, "SF Mono", Menlo, monospace;
+  /* the print document face: a text serif, used by /print and /resume only */
+  --doc: var(--font-doc), Charter, "Bitstream Charter", Georgia, serif;
 
   /* metrics */
   --rail: 76px;
@@ -962,15 +964,23 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
 .print-doc { display: none; }
 
 @media print {
-  /* Tracking above roughly 0.06em makes every PDF text extractor insert a
-     space between glyphs, so an applicant tracking system reads EXPERIENCE as
-     "E X P E R I E N C E" and cannot find the section at all. Everything
-     uppercase in this document stays at or under 0.02em for that reason. */
-  @page { size: A4; margin: 12mm 12mm 12mm 12mm; }
+  /* ------------------------------------------------------------------
+     THE DOCUMENT
+     Set like a printed resume, not like a web page shrunk to fit. Body
+     runs at 9.6pt in a text serif with a large x-height, because the
+     previous 8.3pt sans read as compressed and made good content look
+     cheap. There is no date gutter: dates sit right aligned on the
+     title's own baseline, which returns about a quarter of the line
+     width to the sentences.
 
-  /* The PDF exporter paints the page canvas from the UA colour scheme, so a
-     dark `color-scheme` on <html> printed a near-black frame in the @page
-     margins around the white content box. Force the light scheme in print. */
+     Tracking anywhere uppercase stays at or under 0.02em. Above roughly
+     0.06em every PDF text extractor inserts a space between glyphs, so
+     an applicant tracking system reads EXPERIENCE as "E X P E R I E N C E"
+     and cannot segment the document at all.
+     ------------------------------------------------------------------ */
+
+  @page { size: A4; margin: 13mm 13mm 11mm 13mm; }
+
   html, body {
     background: #fff !important;
     background-color: #fff !important;
@@ -983,126 +993,156 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
 
   .print-doc {
     display: block;
-    font-family: var(--ui);
-    font-size: 8.3pt;
-    line-height: 1.27;
-    color: #16181D;
+    font-family: var(--doc);
+    font-size: 9.6pt;
+    line-height: 1.38;
+    color: #14161A;
     max-width: none;
   }
-  .print-doc a { color: #16181D; text-decoration: none; }
+  .print-doc a { color: #14161A; text-decoration: none; }
+  .print-doc strong { font-weight: 600; color: #05070A; }
 
+  /* ---- masthead ---- */
   .p-name {
-    font-family: var(--display);
-    font-size: 18.5pt;
-    line-height: 1;
-    letter-spacing: -0.02em;
-    color: #0A0B0D;
+    font-family: var(--doc);
+    font-size: 22pt;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.005em;
+    text-align: center;
+    color: #05070A;
     margin: 0;
   }
   .p-contact {
-    font-family: var(--mono);
-    font-size: 7pt;
-    letter-spacing: 0.02em;
-    color: #43464D;
-    margin-top: 5pt;
+    font-family: var(--doc);
+    font-size: 9pt;
+    line-height: 1.5;
+    text-align: center;
+    color: #33373E;
+    margin-top: 4pt;
   }
+  .p-contact .sep { color: #9BA0A8; padding: 0 4pt; }
+  .p-contact-2 { margin-top: 1pt; }
   .p-role {
-    font-family: var(--mono);
-    font-size: 7.6pt;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    color: #8A5A00;
-    margin-top: 7pt;
+    font-family: var(--doc);
+    font-size: 9.6pt;
+    font-style: italic;
+    text-align: center;
+    color: #6B4A05;
+    margin-top: 5pt;
   }
   .p-summary {
-    font-size: 8.3pt;
-    line-height: 1.36;
-    color: #2A2D33;
-    margin-top: 5pt;
+    font-size: 9.6pt;
+    line-height: 1.42;
+    color: #1D2026;
+    margin-top: 7pt;
     max-width: none;
   }
-  .p-hr { border: 0; border-top: 0.7pt solid #0A0B0D; margin: 9pt 0 0; }
+  .p-hr { display: none; }
 
-  .p-sec { margin-top: 7pt; break-inside: auto; }
+  /* ---- sections ---- */
+  .p-sec { margin-top: 7.5pt; break-inside: auto; }
+  /* a section heading may never be the last thing on a page */
+  .p-sec-h { break-after: avoid-page; }
   .p-sec-h {
-    font-family: var(--mono);
-    font-size: 7.2pt;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    color: #16181D;
-    border-bottom: 0.6pt solid #C9C6BC;
-    padding-bottom: 2.5pt;
+    font-family: var(--doc);
+    font-size: 12.4pt;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
+    color: #05070A;
+    border-bottom: 0.9pt solid #05070A;
+    padding-bottom: 1.5pt;
     margin-bottom: 6pt;
   }
 
-  .p-entry {
-    display: grid;
-    grid-template-columns: 68pt 1fr;
-    gap: 11pt;
-    margin-bottom: 5pt;
-    break-inside: avoid;
+  /* ---- an entry: title left, dates right, bullets full width ---- */
+  .p-entry { display: block; margin-bottom: 6pt; break-inside: avoid; }
+  .p-entry-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 14pt;
   }
+  .p-title {
+    font-size: 10.2pt;
+    font-weight: 400;
+    color: #05070A;
+    letter-spacing: 0;
+    line-height: 1.3;
+  }
+  .p-title strong { font-weight: 600; }
+  .p-title .p-title-2 { color: #2A2E35; }
   .p-when {
-    font-family: var(--mono);
-    font-size: 7.2pt;
-    letter-spacing: 0.02em;
-    color: #5A5E66;
-    text-transform: uppercase;
-    padding-top: 1.2pt;
+    font-family: var(--doc);
+    font-size: 9.4pt;
+    color: #33373E;
+    text-transform: none;
+    letter-spacing: 0;
+    white-space: nowrap;
+    flex: 0 0 auto;
   }
-  .p-title { font-size: 9pt; font-weight: 600; color: #0A0B0D; letter-spacing: -0.01em; }
-  .p-sub { font-size: 8.1pt; color: #4A4E55; margin-top: 1pt; }
+  .p-sub {
+    font-size: 9.4pt;
+    font-style: italic;
+    color: #3A3E45;
+    margin-top: 0.5pt;
+  }
   .p-tag {
     font-family: var(--mono);
-    font-size: 6.6pt;
+    font-size: 7.2pt;
     letter-spacing: 0.02em;
     text-transform: uppercase;
     border: 0.6pt solid #8A5A00;
     color: #8A5A00;
-    padding: 1pt 3pt;
+    padding: 0.8pt 3pt;
     margin-left: 5pt;
     white-space: nowrap;
+    vertical-align: 1pt;
   }
+
+  /* ---- bullets ---- */
   .p-ul { margin: 3pt 0 0; padding: 0; list-style: none; }
   .p-ul li {
     position: relative;
-    padding-left: 8pt;
-    margin-bottom: 1.6pt;
-    font-size: 8.25pt;
-    line-height: 1.29;
-    color: #2A2D33;
+    padding-left: 11pt;
+    margin-bottom: 2.6pt;
+    font-size: 9.6pt;
+    line-height: 1.38;
+    color: #1D2026;
     break-inside: avoid;
   }
   .p-ul li::before {
-    content: "";
+    content: "\2022";
     position: absolute;
-    left: 0; top: 5pt;
-    width: 4pt; height: 0.7pt;
-    background: #9A9EA5;
+    left: 1.5pt;
+    top: -0.2pt;
+    color: #5E636B;
+    font-size: 9.6pt;
   }
   .p-tech {
     font-family: var(--mono);
-    font-size: 6.9pt;
-    color: #5A5E66;
+    font-size: 8.1pt;
+    color: #4A4E55;
     margin-top: 3pt;
-    line-height: 1.4;
+    line-height: 1.45;
+    padding-left: 11pt;
   }
-  .p-skill {
-    display: grid;
-    grid-template-columns: 68pt 1fr;
-    gap: 11pt;
-    margin-bottom: 3pt;
-    break-inside: avoid;
-  }
+
+  /* ---- skills, one line per group ---- */
+  .p-skill { margin-bottom: 3.4pt; break-inside: avoid; line-height: 1.4; }
   .p-skill-g {
-    font-family: var(--mono);
-    font-size: 7.2pt;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    color: #5A5E66;
+    font-size: 9.6pt;
+    font-weight: 600;
+    color: #05070A;
+    letter-spacing: 0;
+    text-transform: none;
   }
-  .p-skill-i { font-size: 8.2pt; color: #2A2D33; line-height: 1.36; }
-  .p-text { font-size: 8.25pt; line-height: 1.36; color: #2A2D33; }
+  .p-skill-i { font-size: 9.6pt; color: #1D2026; }
+
+  .p-text { font-size: 9.6pt; line-height: 1.42; color: #1D2026; }
+
+  /* no trailing whitespace may create a page of its own */
   .print-doc > *:last-child { margin-bottom: 0 !important; }
   .p-sec:last-child .p-entry:last-child,
   .p-sec:last-child .p-skill:last-child { margin-bottom: 0 !important; }
@@ -1110,11 +1150,11 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
   .print-doc { break-after: avoid-page; }
 
   .p-foot {
-    margin-top: 10pt;
+    margin-top: 12pt;
     padding-top: 5pt;
     border-top: 0.6pt solid #C9C6BC;
     font-family: var(--mono);
-    font-size: 6.8pt;
+    font-size: 7.4pt;
     letter-spacing: 0.02em;
     color: #6A6E75;
     text-transform: uppercase;
