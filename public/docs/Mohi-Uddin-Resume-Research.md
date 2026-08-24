@@ -56,4 +56,4 @@ Final year computer science student working on systems where **the failure mode 
 
 ---
 
-Resume, research track. Sources and code at github.com/1shizaan.
+Resume, research track. Sources and code at mohi-uddin.vercel.app.

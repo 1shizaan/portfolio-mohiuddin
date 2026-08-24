@@ -143,4 +143,4 @@ Available for twelve or more weeks full time in summer 2027, willing to relocate
 
 ---
 
-CV, research track. Sources and code at github.com/1shizaan.
+CV, research track. Sources and code at mohi-uddin.vercel.app.

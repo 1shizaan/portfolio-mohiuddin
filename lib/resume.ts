@@ -32,11 +32,11 @@ export const identity = {
   phone: "+91 78424 49809",
   linkedin: "linkedin.com/in/mohammed-mohi-uddin-13b818333",
   github: "github.com/1shizaan",
-  site: "mohiuddin.dev",
+  site: "mohi-uddin.vercel.app",
   /* mohiuddin.dev is registered to somebody else and serves their page, so the
      documents must not send a reader there. Flip this to true only once the
      domain in `site.url` is actually bought and the site is deployed. */
-  siteIsLive: false,
+  siteIsLive: true,
 };
 
 /* ============================================================
@@ -94,7 +94,7 @@ const ENG_RESUME: Doc = {
   audience: "AI engineering, backend and full stack roles at startups and product companies.",
   headline: "AI systems and backend engineer",
   summary:
-    "Final year computer science student who ships. Launched **DebugAI**, a VS Code debugger with **5,800+ downloads** across three registries. Strongest at making expensive systems cheap: a reconciliation engine that replaced per row API calls with a blocked matcher and does **100,000 rows in 4.25 seconds** with zero API calls.",
+    "Final year computer science student who ships. Launched **DebugAI**, a debugging system for developers and AI agents with **5,800+ downloads** across three registries. Strongest at making expensive systems cheap: a reconciliation engine that replaced per row API calls with a blocked matcher and does **100,000 rows in 4.25 seconds** with zero API calls.",
   sections: [
     {
       title: "Experience",
@@ -103,11 +103,11 @@ const ENG_RESUME: Doc = {
         {
           when: "Feb 2026 – now",
           title: "Founder and sole engineer",
-          sub: "DebugAI · an AI debugger for VS Code, debugai.io",
+          sub: "DebugAI · a debugging system for developers and AI agents, debugai.io",
           tag: "Launched",
           bullets: [
             "Built and shipped every layer of a **five service monorepo**: VS Code extension, Express gateway, FastAPI inference engine, Next.js dashboard, PostgreSQL with pgvector, Redis.",
-            "**512 Marketplace installs, 5,800+ downloads** across three registries, 879 commits, 519 engine tests passing.",
+            "**512 Marketplace installs, 5,800+ downloads** across VS Code, Open VSX and npm, the last a **standalone MCP server** agents call with no editor. 879 commits, 519 engine tests passing.",
             "**Context assembly** from a stack trace: traced files forced in, then pgvector retrieval of code the trace never names, inside a token budget. SHA-256 cache, difficulty based routing, and a cross provider fallback that holds the response shape during an outage.",
             "**Live billing** on production keys: HMAC verified webhooks, idempotency on the provider event id, and a tier guard that enforces an expired trial even when the cron fails.",
           ],
@@ -145,7 +145,7 @@ const ENG_RESUME: Doc = {
           when: "Aug 2026",
           title: "Inkline · handwriting to installable font",
           bullets: [
-            "Homography un-warp of a photographed sheet, then a **Moore boundary tracer and Schneider cubic fitter written from scratch** because Potrace is GPL and would attach itself to every font the tool makes. A headless browser test downloads the OTF and parses it back.",
+            "Homography un-warp of a photographed sheet, then a **Moore boundary tracer and Schneider cubic fitter written from scratch** because Potrace is GPL and would attach itself to every font the tool makes. Proven by a headless browser test that parses the OTF back.",
           ],
         },
       ],
@@ -168,7 +168,7 @@ const ENG_RESUME: Doc = {
           title: "B.Tech, Computer Science Engineering (Data Science)",
           sub: "Swami Vivekananda Institute of Technology, Hyderabad",
           bullets: [
-            "**Second place, Techno Udbhav 2025** research paper competition, for OptiXon health sensing eyewear. Smart India Hackathon 2025. IIT Hyderabad certificates in Generative AI with ML and Data Science.",
+            "**Second place, Techno Udbhav 2025** research paper competition for OptiXon. Smart India Hackathon 2025.",
           ],
         },
       ],
@@ -198,10 +198,11 @@ const ENG_CV: Doc = {
         {
           when: "Feb 2026 – present",
           title: "Founder and sole engineer",
-          sub: "DebugAI · an AI debugger for VS Code, debugai.io",
+          sub: "DebugAI · a debugging system for developers and AI agents, debugai.io",
           tag: "Launched Jun 2026",
           bullets: [
-            "Designed and shipped every layer: a VS Code extension, an Express API gateway, a FastAPI inference engine, a Next.js dashboard and marketing site, PostgreSQL with pgvector, Redis, and the deployment pipeline across Vercel and Railway.",
+            "Designed and shipped every layer: the editor extension, an Express API gateway, a FastAPI inference engine, a Next.js dashboard and marketing site, PostgreSQL with pgvector, Redis, and the deployment pipeline across Vercel and Railway.",
+            "Three distribution channels rather than one: the extension on the VS Code Marketplace and on Open VSX, which covers Cursor, Windsurf and VSCodium, and `@debugai/mcp` published to npm as a standalone MCP server so a coding agent calls the same engine with no editor involved. The MCP server resolves the files a stack trace names under a repository root allowlist with a containment check after realpath.",
             "512 VS Code Marketplace installs and 5,800+ combined downloads across VS Code, Open VSX and npm, verified against the live registry APIs on 23 August 2026. Installs and downloads are separate metrics and only one of them sums.",
             "Context assembly: parse the stack trace, force inclusion of the files it names, then retrieve related code the trace never mentions using pgvector embeddings over the repository, inside a managed token budget. A second retrieval pass runs when the model reports missing context, under a 40 second deadline with a fallback to the first pass result.",
             "Cost control: a SHA-256 cache key over error text, project and framework hint checked in Redis before any model call, plus difficulty based routing between a small and a large model and a cross provider fallback that preserves the response shape on an upstream 429 or 503.",

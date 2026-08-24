@@ -10,9 +10,10 @@ I build systems that have to survive a real constraint, and I write down which n
 
 ### Founder and sole engineer (Launched Jun 2026)
 
-*Feb 2026 – present · DebugAI · an AI debugger for VS Code, debugai.io*
+*Feb 2026 – present · DebugAI · a debugging system for developers and AI agents, debugai.io*
 
-- Designed and shipped every layer: a VS Code extension, an Express API gateway, a FastAPI inference engine, a Next.js dashboard and marketing site, PostgreSQL with pgvector, Redis, and the deployment pipeline across Vercel and Railway.
+- Designed and shipped every layer: the editor extension, an Express API gateway, a FastAPI inference engine, a Next.js dashboard and marketing site, PostgreSQL with pgvector, Redis, and the deployment pipeline across Vercel and Railway.
+- Three distribution channels rather than one: the extension on the VS Code Marketplace and on Open VSX, which covers Cursor, Windsurf and VSCodium, and `@debugai/mcp` published to npm as a standalone MCP server so a coding agent calls the same engine with no editor involved. The MCP server resolves the files a stack trace names under a repository root allowlist with a containment check after realpath.
 - 512 VS Code Marketplace installs and 5,800+ combined downloads across VS Code, Open VSX and npm, verified against the live registry APIs on 23 August 2026. Installs and downloads are separate metrics and only one of them sums.
 - Context assembly: parse the stack trace, force inclusion of the files it names, then retrieve related code the trace never mentions using pgvector embeddings over the repository, inside a managed token budget. A second retrieval pass runs when the model reports missing context, under a 40 second deadline with a fallback to the first pass result.
 - Cost control: a SHA-256 cache key over error text, project and framework hint checked in Redis before any model call, plus difficulty based routing between a small and a large model and a cross provider fallback that preserves the response shape on an upstream 429 or 503.
@@ -145,4 +146,4 @@ I build systems that have to survive a real constraint, and I write down which n
 
 ---
 
-CV, engineering track. Sources and code at github.com/1shizaan.
+CV, engineering track. Sources and code at mohi-uddin.vercel.app.

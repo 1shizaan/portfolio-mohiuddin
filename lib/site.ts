@@ -10,7 +10,7 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/mohammed-mohi-uddin-13b818333/",
   linkedinHandle: "mohammed-mohi-uddin-13b818333",
   debugai: "https://debugai.io",
-  url: "https://mohiuddin.dev",
+  url: "https://mohi-uddin.vercel.app",
   thesis:
     "Deterministic first. Models later. Every number on this page says how it was obtained.",
 };

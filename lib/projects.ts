@@ -562,7 +562,7 @@ export const projects: Project[] = [
     ],
     featured: true,
     summary:
-      "A debugger that lives in VS Code, reads the stack trace and the files around it, and hands back a fix you apply in one click. Launched on the VS Code Marketplace and Product Hunt, on real payment keys, with paying infrastructure behind it.",
+      "A debugging system that reads the stack trace and the files around it and hands back a fix you apply in one click. It ships three ways: an editor extension on the VS Code Marketplace, the same extension on Open VSX for Cursor and Windsurf, and a standalone MCP server on npm that coding agents call with no editor involved. Launched on real payment keys, with paying infrastructure behind it.",
     problem:
       "A copilot writes code. When that code throws at runtime, the useful context is spread across a stack trace, the files it names, the files it does not name, the branch you are on, and whether anyone on your team hit this exact error last week. Pasting an error into a chat box discards all of it.",
     constraint:

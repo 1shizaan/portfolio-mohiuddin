@@ -4,16 +4,16 @@ Hyderabad, India · t.d.m.mohi@gmail.com · +91 78424 49809 · linkedin.com/in/m
 
 **AI systems and backend engineer**
 
-Final year computer science student who ships. Launched **DebugAI**, a VS Code debugger with **5,800+ downloads** across three registries. Strongest at making expensive systems cheap: a reconciliation engine that replaced per row API calls with a blocked matcher and does **100,000 rows in 4.25 seconds** with zero API calls.
+Final year computer science student who ships. Launched **DebugAI**, a debugging system for developers and AI agents with **5,800+ downloads** across three registries. Strongest at making expensive systems cheap: a reconciliation engine that replaced per row API calls with a blocked matcher and does **100,000 rows in 4.25 seconds** with zero API calls.
 
 ## Experience
 
 ### Founder and sole engineer (Launched)
 
-*Feb 2026 – now · DebugAI · an AI debugger for VS Code, debugai.io*
+*Feb 2026 – now · DebugAI · a debugging system for developers and AI agents, debugai.io*
 
 - Built and shipped every layer of a **five service monorepo**: VS Code extension, Express gateway, FastAPI inference engine, Next.js dashboard, PostgreSQL with pgvector, Redis.
-- **512 Marketplace installs, 5,800+ downloads** across three registries, 879 commits, 519 engine tests passing.
+- **512 Marketplace installs, 5,800+ downloads** across VS Code, Open VSX and npm, the last a **standalone MCP server** agents call with no editor. 879 commits, 519 engine tests passing.
 - **Context assembly** from a stack trace: traced files forced in, then pgvector retrieval of code the trace never names, inside a token budget. SHA-256 cache, difficulty based routing, and a cross provider fallback that holds the response shape during an outage.
 - **Live billing** on production keys: HMAC verified webhooks, idempotency on the provider event id, and a tier guard that enforces an expired trial even when the cron fails.
 
@@ -42,7 +42,7 @@ Final year computer science student who ships. Launched **DebugAI**, a VS Code d
 
 *Aug 2026*
 
-- Homography un-warp of a photographed sheet, then a **Moore boundary tracer and Schneider cubic fitter written from scratch** because Potrace is GPL and would attach itself to every font the tool makes. A headless browser test downloads the OTF and parses it back.
+- Homography un-warp of a photographed sheet, then a **Moore boundary tracer and Schneider cubic fitter written from scratch** because Potrace is GPL and would attach itself to every font the tool makes. Proven by a headless browser test that parses the OTF back.
 
 ## Skills
 
@@ -56,8 +56,8 @@ Final year computer science student who ships. Launched **DebugAI**, a VS Code d
 
 *Aug 2023 – Aug 2027 · Swami Vivekananda Institute of Technology, Hyderabad*
 
-- **Second place, Techno Udbhav 2025** research paper competition, for OptiXon health sensing eyewear. Smart India Hackathon 2025. IIT Hyderabad certificates in Generative AI with ML and Data Science.
+- **Second place, Techno Udbhav 2025** research paper competition for OptiXon. Smart India Hackathon 2025.
 
 ---
 
-Resume, engineering track. Sources and code at github.com/1shizaan.
+Resume, engineering track. Sources and code at mohi-uddin.vercel.app.
