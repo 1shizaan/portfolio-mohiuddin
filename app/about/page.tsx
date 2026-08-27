@@ -23,32 +23,52 @@ export default function About() {
         <Reveal delay={60}>
           <div className="prose lead">
             <p>
-              I am Mohammed Mohi Uddin, in my final year of a computer science degree in
-              Hyderabad. I started building in 2024 with a computer vision model that scored
-              faces against eyeglass frames, and I have not stopped since. Fourteen projects
-              later the pattern is clearer to me than it was at the time: I go looking for the
-              constraint, and then I let it decide the architecture.
+              Final year, computer science, Hyderabad. I started in 2024 with a model that
+              scored how well a pair of glasses fit your face from a single photo, and the
+              first version reported millimetres. You can&apos;t get millimetres out of an
+              uncalibrated photo. Took me longer than it should have to see that, and once I
+              did I threw the units out and worked in ratios instead.
             </p>
             <p>
-              The most useful thing I do is not technical. When I designed a health sensing
-              circuit that would sit against somebody&apos;s head, I did not trust myself with
-              it. I spent days at IIT Hyderabad asking M.Tech students to tear the design apart,
-              got a working professional to review the microcontroller architecture, and sent
-              fifty pages of feasibility analysis to a faculty researcher at the University of
-              Hyderabad. Three of those conversations found errors. One of them was a battery
-              protection bug that would have passed every functional test and protected nothing.
+              That is roughly how the last three years have gone. Fourteen projects now, and
+              the thing they share is that the constraint turned up before the idea did, and I
+              let it pick the architecture.
             </p>
             <p>
-              I also stop things. Three months went into a cold email agent before I read twenty
-              of its emails in a row and realised it was a bulk sender with a language model
-              attached. A reconciliation engine that works is paused because people do not hand
-              their financial data to an individual, and no amount of engineering changes that.
-              Both of those are on this site with the reason written down, because a portfolio
-              that only lists wins is a sales page.
+              The most useful thing I do isn&apos;t technical. OptiXon is a health sensor that
+              lives inside the arm of a pair of glasses, pressed against your head, with a
+              lithium cell in it. I did not trust myself with that. So I took it to M.Tech
+              students at IIT Hyderabad and sat there while they pulled it apart, and I got a
+              working hardware professional to go over the microcontroller side. Both said it
+              could be built. Both had changes. I also sent about fifty pages of feasibility
+              work to a professor at the University of Hyderabad and never heard back, which is
+              the ordinary outcome and not a reason to skip the step.
             </p>
             <p>
-              What I want next is a lab or a team where the problems are harder than the ones I
-              can find alone, and where somebody will tell me when I am wrong faster than six
+              The bug that actually mattered I found myself, weeks later, and only because by
+              then I was checking things three ways instead of once. The battery protection
+              circuit had a wrong pin map. It would have charged, discharged, powered the whole
+              device and passed every test I could think of, while protecting nothing at all.
+              Number 37 in the log.
+            </p>
+            <p>
+              I stop things too. In May 2025 I opened the sent folder of an outreach agent I had
+              been building since March and read twenty emails in a row. Same email. Different
+              name at the top, identical paragraphs underneath. Every dashboard in that system
+              was green, because I had instrumented delivery and never once instrumented whether
+              the output was any good. I shut it down that week and went looking for a problem
+              that was boring and real.
+            </p>
+            <p>
+              MatchLedger is paused for a duller reason. It works. It reconciles a hundred
+              thousand rows against ninety eight thousand in four and a quarter seconds and
+              calls no API at all. And nobody is going to hand their bank statements to a
+              student with a GitHub account. That needs a registered company, not more code.
+              Both of those are on this site with the reason written next to them.
+            </p>
+            <p>
+              What I want next is a team where the problems are harder than the ones I can find
+              on my own, and where somebody tells me I&apos;m wrong in a week instead of six
               months.
             </p>
           </div>

@@ -17,9 +17,10 @@ export default function ResumePage() {
           Four documents, <em>two</em> audiences.
         </h1>
         <p className="prose lead mt40">
-          A lab reads for method and wants the CGPA. A startup reads for shipping evidence and
-          does not. So there are two tracks, each with a one page resume and a longer CV, and
-          nothing in either is padded to fill a page.
+          A lab wants to know how I think, and would like to see the CGPA. A startup wants to
+          know what I have shipped and does not care about the CGPA at all. I got tired of
+          sending the same document to both, so there are two tracks now, each with a one page
+          resume and a longer CV behind it.
         </p>
       </Reveal>
 

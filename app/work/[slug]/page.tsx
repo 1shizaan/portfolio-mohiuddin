@@ -40,9 +40,9 @@ const DEMO_NOTE: Record<string, string> = {
   secaudit:
     "Twenty four of the sixty plus rules, running on every keystroke. The real tool is a single Python file you point at a directory.",
   tracer:
-    "The actual boundary follower, corner detector and cubic fitter from the pipeline. No tracing library is involved, which was the constraint that produced it.",
+    "The real boundary follower, corner detector and cubic fitter, lifted straight out of the pipeline. No tracing library anywhere in it, which is the constraint that produced the whole thing.",
   spectrum:
-    "The provenance table from the specification, made interactive. Nothing here is a rendering. It is a statement about what each tier of hardware can honestly claim.",
+    "The provenance table out of the specification, made interactive. Nothing here is a rendering of anything. It is a claim about what each tier of hardware can honestly say it saw.",
   fusion:
     "The real classification report from the held-out test set, class by class.",
 };

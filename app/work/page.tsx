@@ -26,10 +26,10 @@ export default function WorkPage() {
       <Reveal delay={80}>
         <div className="split ends mt40">
           <p className="prose">
-            Sorted newest first. Filter by domain if you are looking for a specific kind of
-            problem. Each case study is written the same way: the problem, the constraint that
-            shaped it, what was actually built, the part that was genuinely hard, the numbers with
-            their sources, and what I got wrong.
+            Newest first, and you can filter by domain if you are after a particular kind of
+            problem. Every case study is laid out identically, which I did mostly so I would not
+            be able to skip the uncomfortable section on the ones that went badly. There is a
+            what I got wrong on all fourteen.
           </p>
           <div className="row wrap g24 end" style={{ justifyContent: "flex-start" }}>
             <span className="stack">

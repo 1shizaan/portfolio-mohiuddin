@@ -34,7 +34,7 @@ export const projects: Project[] = [
     ],
     hardPart: {
       head: "Scale is unknowable from one photo",
-      body: "A face 30cm from the lens and a face 60cm from the lens produce the same pixel geometry if the second face is twice as large. Every absolute measurement in millimetres was therefore a lie. The fix was to stop measuring absolutes and work entirely in ratios anchored to interpupillary distance, which is the most stable proportion on a human face.",
+      body: "A face 30cm from the lens and a face twice that size at 60cm land on the sensor identically. There is no way to tell them apart, which means every millimetre figure the thing printed was invented. The fix was to stop measuring absolutes altogether and work in ratios anchored to interpupillary distance, which is about the most stable proportion a human face has.",
     },
     metrics: [
       {
@@ -53,11 +53,11 @@ export const projects: Project[] = [
       },
     ],
     wrong: [
-      "The first version reported millimetres. It should never have reported an absolute unit from a single uncalibrated photo, and the numbers looked authoritative while being meaningless.",
-      "Landmark detection degraded badly on faces at an angle, and there was no confidence output to say so. It answered every time, including when it should have declined.",
+      "The first version reported millimetres, confidently, to one decimal place. From a single uncalibrated phone photo. Those numbers looked more authoritative than anything else on the screen and they meant nothing at all.",
+      "Landmark detection fell apart on faces at an angle and had no way of telling you so. It answered every single time, including the times it should have said it could not see well enough.",
     ],
     learned:
-      "A 15 point gain from a learned model reads very differently once you know the baseline was 70 and not zero. I now build the deterministic version first specifically so I can see what the model is actually worth.",
+      "Fifteen points reads very differently once you know the baseline was 70 and not zero. I had been quoting 85 for weeks before I bothered to build the arithmetic version, and now I build that one first every time, mostly so I can find out early whether the model is earning anything.",
   },
 
   {
@@ -137,11 +137,11 @@ export const projects: Project[] = [
       },
     ],
     wrong: [
-      "Two classes still trade errors: Food and Dining against Recipes, and Social Media Screens against everything else with a header bar. Both are cases where OCR returns almost nothing and the fusion degrades to v1.",
-      "The 2024 version was reported as 90 percent training accuracy, which is the number that flatters you, not the one that predicts behaviour. The v2 number is a held-out test set and the two are not comparable.",
+      "Food and Dining still trades errors with Recipes, and Social Media Screens still trades with anything else that has a header bar. Both happen when OCR comes back with almost nothing, at which point the fusion quietly degrades into v1 and inherits v1's blind spot.",
+      "I reported the 2024 version as 90 percent, which was training accuracy. That is the flattering number, not the useful one. The v2 figure is a held out test set and the two should never have been put in the same sentence, including by me.",
     ],
     learned:
-      "The gap between 90 and 97 was not a better model. It was noticing that the input was missing a channel. Most of my accuracy gains since have come from the same move.",
+      "I spent a while in 2024 trying to get past the high 80s by feeding the vision model more images, and it did not move. What eventually moved it was reading the confusion matrix properly and noticing the errors were all in the text heavy classes. The model was not weak. It could not read. Most of the accuracy I have gained since has come from that same move, which is looking at what the input is missing rather than what the model is missing.",
     scale: [
       { label: "Classes", value: "20" },
       { label: "Test set", value: "260 images" },
@@ -161,7 +161,7 @@ export const projects: Project[] = [
     role: "Solo",
     stack: ["FastAPI", "React", "OpenAI API", "Mailgun", "Postmark", "Docker", "SQLite"],
     summary:
-      "A cold email campaign agent, a LinkedIn posting agent, and the scrapers that fed them. All of it worked. I shut it down anyway.",
+      "A cold email campaign agent, a LinkedIn posting agent, and the scrapers feeding both. All of it worked, all of it deployed. I shut it down anyway, in the third month, after reading twenty of its emails in a row.",
     problem:
       "Outreach is repetitive, so it looks like the obvious thing to automate. Write once, personalise per recipient, schedule, track replies.",
     constraint:
@@ -182,7 +182,7 @@ export const projects: Project[] = [
     ],
     hardPart: {
       head: "The failure was invisible from inside the system",
-      body: "Every metric was green. Emails sent, deliverability fine, no errors in the logs, dashboard healthy. Nothing in the instrumentation measured whether the output was any good, because output quality was assumed rather than tested. I only found it by opening the sent folder and reading twenty emails in a row.",
+      body: "Every metric was green. Emails going out, deliverability fine, clean logs, healthy dashboard. None of it measured whether the output was worth sending, because I had assumed output quality instead of testing it. I found the problem by opening the sent folder one afternoon and reading twenty emails back to back, which is a thing no part of the system was ever going to do for me.",
     },
     metrics: [
       {
@@ -199,11 +199,11 @@ export const projects: Project[] = [
       },
     ],
     wrong: [
-      "Nothing in the system tested output quality. Every check was operational. That is the actual bug and it took three months to see.",
-      "I picked the problem because it was a fun build, not because anyone was suffering from it. The next project I picked was chosen the other way round.",
+      "Nothing in the system tested output quality. Every check I had written was operational. That is the real bug and it took me three months and twenty emails to see it.",
+      "I picked the problem because it was a fun build. Nobody had asked me for it and nobody was suffering without it. I chose the next one the other way round on purpose.",
     ],
     learned:
-      "A pause is not a failure and it is also not a defeat you dress up afterwards. I stopped, wrote down why, and went looking for a problem that was boring and real. That search produced MatchLedger.",
+      "Killing it was easy once I had read the outbox. The part worth keeping is what I wrote down that week, which was that I had spent three months instrumenting whether the system ran and zero minutes instrumenting whether it was any good. Then I went looking for a problem that was boring and that somebody actually had. That search produced MatchLedger.",
   },
 
   {
@@ -246,10 +246,10 @@ export const projects: Project[] = [
       },
     ],
     wrong: [
-      "I treated embeddings as a black box. I could use them and could not explain why one model beat another on my corpus, which is exactly the gap that pushed me toward research applications.",
+      "I treated embeddings as a black box the whole four weeks. I could use them fine. I could not have told you why one model beat another on my corpus, and I still find that gap annoying enough that it is most of why I am reading toward research now.",
     ],
     learned:
-      "Recognised for technical soundness and collaboration at the end of the programme. The lasting piece was smaller than the certificate: a retrieval system that cannot say I do not know is a system that lies at a steady rate.",
+      "I got a mention for technical soundness and collaboration at the end of it. The thing I actually took away was smaller than the certificate. When retrieval missed, the system produced a fluent, confident, nicely formatted answer that was simply wrong, and there was nothing on screen to distinguish it from a correct one. I have been building against that ever since.",
   },
 
   {
@@ -270,7 +270,7 @@ export const projects: Project[] = [
     problem:
       "Reconciliation is matching one list of transactions against another and explaining every row that does not line up. It is done by hand, monthly, by people whose time is expensive, and getting it wrong is an audit problem rather than an inconvenience.",
     constraint:
-      "I had limited API credits. That single constraint produced the architecture, because at a fraction of a cent per embedding call, 100,000 rows compared naively is both slow and expensive enough to be unshippable.",
+      "I was short on API credits. That is the whole reason this architecture exists, because at a fraction of a cent per embedding call, comparing 100,000 rows naively is expensive enough and slow enough that you can never ship it to anybody.",
     approach: [
       {
         head: "Pass one: exact, vectorised",
@@ -291,7 +291,7 @@ export const projects: Project[] = [
     ],
     hardPart: {
       head: "Blocking is the difference between four seconds and never finishing",
-      body: "Naive matching compares every ledger row to every bank row. At 100,000 against 98,000 that is 9.8 billion comparisons. Blocking on amount bucket and date window first means only plausible pairs are ever compared, which is what turns an intractable problem into a four second one. The embedding engine that came first is still in the repository, and the comparison between the two is the most useful thing in it.",
+      body: "Naive matching compares every ledger row against every bank row. At 100,000 against 98,000 that is 9.8 billion comparisons and it simply does not finish. Bucketing by amount and date window first means only plausible pairs ever meet, which is the entire difference between intractable and 4.25 seconds. I left the old embedding engine in the repository rather than deleting it, because having both side by side is more instructive than either one alone.",
     },
     metrics: [
       {
@@ -322,12 +322,12 @@ export const projects: Project[] = [
       },
     ],
     wrong: [
-      "The first engine used embeddings for everything, which cost money per row and was worse. Replacing it was a rewrite, not a tune.",
-      "The original custom narration matching module was lost before it was committed. The zero cost engine exists partly because I had to rebuild that capability from scratch and chose a different approach the second time.",
-      "The frontend fell back to the production API URL when a local env file was missing, so a local dev session could silently talk to production. That is written at the top of the project notes now.",
+      "The first engine ran embeddings on everything. It cost money per row, it was slower, and it matched worse. Replacing it was a rewrite from scratch, not a round of tuning.",
+      "I lost the original custom narration matching module before I ever committed it. Genuinely gone. The zero cost engine partly exists because I had to rebuild that capability from nothing and picked a different approach the second time round, which is a stupid way to arrive at a better design.",
+      "If the local env file was missing, the frontend quietly fell back to the production API URL. So a dev session on my own laptop could be talking to production without a single warning anywhere. That one is written at the top of the project notes now, in capitals.",
     ],
     learned:
-      "Paused deliberately. People do not hand confidential financial data to an individual, they hand it to a registered company, and no amount of engineering fixes that. The engine is finished and waiting on a legal entity, which is the correct order.",
+      "Paused on purpose, and not because of anything in the code. People do not hand confidential financial records to an individual with a GitHub account. They hand them to a registered company. I cannot engineer my way past that, so the engine is finished and sitting there waiting on a legal entity, and I would rather say so than let the repository look like it was abandoned.",
     scale: [
       { label: "Tracked files", value: "126" },
       { label: "Lines, backend", value: "14,354" },
@@ -350,7 +350,7 @@ export const projects: Project[] = [
     summary:
       "A full hardware and firmware design for a health sensing eyeglass temple arm. Fabrication pack exported, firmware compiles, and no physical unit exists yet. That distinction is stated on every claim.",
     problem:
-      "Continuous health monitoring means wearing something extra. Glasses are already worn all day by a billion people and already touch the superficial temporal artery, which is where a pulse can be read.",
+      "Continuous health monitoring normally means wearing one more thing. A billion people already wear glasses all day, and the arm of a pair of glasses already rests on the superficial temporal artery, which happens to be somewhere you can read a pulse.",
     constraint:
       "A temple arm is 138mm long and about 10.5mm wide, tapering to a few millimetres. Everything has to fit inside that: the sensor, the microcontroller, the radio, the battery, and the battery protection circuit. It also has to run all day and never get hot against skin.",
     approach: [
@@ -373,7 +373,7 @@ export const projects: Project[] = [
     ],
     hardPart: {
       head: "A wrong pin map that would have silently removed all battery protection",
-      body: "The DW01A and FS8205A protection pairing had a mapping error that passed visual review. The circuit would have powered up, charged, discharged and behaved normally in every test, while providing no overcurrent or overdischarge protection at all. On a lithium cell against a person's head. It is entries 37 and 38 in the bug log, and it is the reason the validation guide refuses to let you skip the current limited smoke test.",
+      body: "The DW01A and FS8205A pairing had a mapping error, and it passed visual review without any trouble. The circuit would have powered up, charged, discharged and behaved perfectly normally in every test I could have run, while providing no overcurrent or overdischarge protection whatsoever. On a lithium cell pressed against somebody's head all day. It sits at entries 37 and 38 in the bug log, and it is the only reason the validation guide will not let you skip the current limited smoke test.",
     },
     plates: [
       {
@@ -454,11 +454,11 @@ export const projects: Project[] = [
       },
     ],
     wrong: [
-      "The version 3.0 feasibility documents this project audited contained errors serious enough that correcting them became the first phase of work. I had written those documents.",
-      "No prototype exists. Every performance number here is a calculation and is tagged as one. A design that has never met a soldering iron has not been validated, and calling the paper phase complete is not the same as calling the product real.",
+      "The v3.0 feasibility documents this project audited had errors in them serious enough that fixing them became phase one of the work. I had written those documents.",
+      "No prototype exists. Every performance number on this page is a calculation and says so. Nothing here has met a soldering iron yet, and finishing the paper phase is not the same as having a product.",
     ],
     learned:
-      "Second place at Techno Udbhav 2025, an inter college research competition. I showed the idea and the workflow to M.Tech students at IIT Hyderabad and to a working circuit design professional. Both said it was feasible and both suggested changes. A professor I wrote to never replied, which is the ordinary outcome and not a reason to stop. Going and asking is cheaper than being wrong for six months, and nobody supervised this: every decision in it is mine.",
+      "Second place at Techno Udbhav 2025, an inter college research competition. Before that I took the idea and the workflow to M.Tech students at IIT Hyderabad and to a working circuit design professional, and sat there while they went through it. Both said it could be built. Both had changes. I also wrote to a professor at the University of Hyderabad and never heard back, which is the ordinary outcome and not a reason to skip the step. Nobody supervised any of this. Every decision in it is mine, including the wrong ones, and going and asking has consistently been cheaper than being wrong for six months.",
     scale: [
       { label: "Generator and design code", value: "17,805 lines" },
       { label: "Documented findings", value: "51" },
@@ -529,11 +529,11 @@ export const projects: Project[] = [
       },
     ],
     wrong: [
-      "Three frontends exist in the repository because the interface was restarted twice under time pressure. That is what a hackathon deadline does to a codebase and it is visible in the tree.",
-      "The offline reconciliation was never tested against a genuinely intermittent connection, only against being fully offline. Those are different failure modes and the harder one went untested.",
+      "There are three frontends in that repository because we restarted the interface twice under deadline. You can see all three sitting in the tree. That is what a hackathon does to a codebase and I would rather leave it visible.",
+      "We tested offline reconciliation against being fully offline. We never tested it against a connection that keeps coming back for four seconds at a time, which is the actual failure mode in rural Punjab and much harder than the one we covered.",
     ],
     learned:
-      "The interesting constraint was not medical and it was not AI. It was that a third of the users cannot receive a web page. Designing for the phone that cannot browse changed every decision after it.",
+      "I went into this expecting the hard part to be medical, or at least to be the symptom checker. It was neither. The hard part is that roughly a third of the people this is for cannot receive a web page at all, and once you design for the phone that cannot browse, every decision after it changes.",
   },
 
   {
@@ -566,7 +566,7 @@ export const projects: Project[] = [
     problem:
       "A copilot writes code. When that code throws at runtime, the useful context is spread across a stack trace, the files it names, the files it does not name, the branch you are on, and whether anyone on your team hit this exact error last week. Pasting an error into a chat box discards all of it.",
     constraint:
-      "One person, and inference costs money per call. Every architectural decision is downstream of the fact that a debug request has to be cheap enough to give away ten a day for free.",
+      "One person, and every model call costs money. Ten free debugs a day is the promise on the pricing page, which means every architectural decision after that has to answer to how cheap a single request can be made.",
     approach: [
       {
         head: "The extension already has the context",
@@ -591,7 +591,7 @@ export const projects: Project[] = [
     ],
     hardPart: {
       head: "Saying not verified when saying verified would sell better",
-      body: "The system distinguishes a fix that was mechanically checked and passed, a fix that was checked and failed, and a fix that was never checked at all. Never checked is displayed as never checked. It is the least flattering thing on the screen and it is the only reason the confirmed fixes mean anything. The same instinct runs through the whole product: installs and downloads are different numbers, only one of them sums, and published copy once said 750 installs when the true count was 193. That mistake is written into the repository instructions so it cannot happen twice.",
+      body: "There are three states a proposed fix can be in. Mechanically checked and passed. Checked and failed. Never checked at all. That third one shows up in the interface as never checked, in plain words, which is the least flattering thing on the screen and the only reason anybody should believe the first two. It would sell better to collapse them. The same argument runs through the rest of the product, including the numbers I publish about it, which is a lesson I earned by getting it wrong in public.",
     },
     metrics: [
       {
@@ -626,12 +626,12 @@ export const projects: Project[] = [
       },
     ],
     wrong: [
-      "Published copy claimed 750 installs while the real number was 193, because two different metrics were summed. The rule that separates them is now written into the repository instructions and a live check verifies it.",
-      "An hourly cron pointed at the marketing domain instead of the API host, returned 404 for days, and trials silently never expired. The tier guard in the hot path exists because the cron cannot be trusted to be alive.",
-      "The first version of the in-app announcement system broke the design system three ways in one component. It got rewritten against the rules rather than argued with.",
+      "Published copy claimed 750 installs when the real number was 193, because I had summed two different metrics without noticing they were different kinds of number. The rule that separates them is now written into the repository instructions, and a live check against the registries verifies it, because I do not trust myself to remember.",
+      "An hourly cron was pointed at the marketing domain instead of the API host. It returned 404 for days without anybody noticing, so trials just never expired and people kept getting paid features for free. There is now a tier guard sitting in the hot path that enforces the expiry independently, on the assumption that the cron is dead.",
+      "The first version of the in-app announcement panel broke my own design rules three separate ways inside one component. Soft shadow, wrong radii, icons where the gutter rail should have been. I rewrote it against the document instead of arguing with the document.",
     ],
     learned:
-      "Launched June 1 2026 on the Marketplace and Product Hunt. The distribution lesson cost more than the engineering one: announcing to people who know you converts at zero, and strangers who have the specific problem convert. Nothing about that is fixable with better code.",
+      "Launched June 1 2026 on the Marketplace and Product Hunt. The engineering was the part I was ready for. What I was not ready for is that announcing to everybody who already knows you converts at approximately zero, and that strangers who happen to have the exact problem convert immediately. I spent a while assuming that was a copy problem. It was not. There is no version of the landing page that makes your friends need a debugger.",
     scale: [
       { label: "Apps in the monorepo", value: "5" },
       { label: "Commits", value: "879" },
@@ -674,7 +674,7 @@ export const projects: Project[] = [
     ],
     hardPart: {
       head: "A scanner that cries wolf gets uninstalled",
-      body: "Static pattern matching produces false positives, and a tool with a bad signal to noise ratio is worse than no tool because it trains you to ignore it. The rules are written to prefer missing a real issue over flagging a safe line, and severity is assigned by what an attacker gains rather than by how alarming the pattern looks.",
+      body: "Static pattern matching throws false positives, and a scanner with a bad signal to noise ratio is worse than having none, because it teaches you to skim the output. So the rules are deliberately tuned to miss a real issue rather than flag a safe line, and severity is assigned by what an attacker actually gains, not by how alarming the pattern looks at a glance.",
     },
     metrics: [
       {
@@ -704,11 +704,11 @@ export const projects: Project[] = [
       },
     ],
     wrong: [
-      "Pattern matching cannot follow data flow, so it cannot tell a sanitised input from an unsanitised one. It finds shapes, not proofs, and the README says so rather than implying otherwise.",
-      "The rule set reflects the stacks I work in. Coverage for Go, Ruby and PHP is real but thinner than for Python and TypeScript.",
+      "Pattern matching cannot follow data flow, so it has no way of telling a sanitised input from an unsanitised one. It matches shapes. The README says that in plain words rather than letting the rule count imply something stronger.",
+      "The rule set reflects the stacks I actually work in. Go, Ruby and PHP coverage is real but noticeably thinner than Python and TypeScript, and I would not want somebody relying on it as their only check.",
     ],
     learned:
-      "Written after doing a full security remediation pass on DebugAI by hand. Most of the rules are mistakes I had made myself, which is why the wording of each finding explains the attack rather than naming the pattern.",
+      "I wrote this straight after doing a full security remediation pass on DebugAI by hand, while the findings were still fresh and slightly embarrassing. A good number of the rules in it are mistakes I had personally shipped. That is why each finding explains what an attacker gets rather than just naming the pattern, because naming the pattern would not have helped me.",
   },
 
   {
@@ -748,7 +748,7 @@ export const projects: Project[] = [
     ],
     hardPart: {
       head: "Long analyses that must not look frozen",
-      body: "A full breakdown runs for minutes across a dozen stages. The pipeline streams progress over server sent events per stage, queues additional videos rather than running them in parallel, and skips stems above twelve minutes of runtime so the rest of the analysis still finishes. Choosing what to degrade is the design.",
+      body: "A full breakdown takes minutes and moves through about a dozen stages, and a silent progress bar for four minutes reads as a hang. So progress streams over server sent events per stage, extra videos queue instead of competing for the same CPU, and anything over twelve minutes of runtime skips stem separation so the rest of the analysis still lands. Most of the work here went into deciding what to give up rather than what to add.",
     },
     metrics: [
       {
@@ -773,11 +773,11 @@ export const projects: Project[] = [
       },
     ],
     wrong: [
-      "A rendered video is flat pixels and the original layers cannot be recovered. The README says this in the second paragraph rather than letting the feature list imply otherwise.",
-      "Text inpainting works on flat and graphic backgrounds and degrades visibly on textured ones. Stated as a limit rather than hidden behind a demo clip that avoids the failure case.",
+      "A rendered video is flat pixels. The original layers are gone and nothing gets them back, so this reverse engineers the technique instead. That is in the second paragraph of the README rather than buried under the feature table, because the feature table reads like it can do more than it can.",
+      "Text inpainting is good on flat and graphic backgrounds and visibly bad on textured ones. I could have picked a demo clip that avoids the failure case. It is written down as a limit instead.",
     ],
     learned:
-      "The heavy data path deliberately lives outside OneDrive, because the first version synced several gigabytes of extracted frames to the cloud before anyone noticed.",
+      "The heavy data path now lives outside OneDrive, deliberately and with a comment explaining why. The first version wrote extracted frames straight into a synced folder and pushed several gigabytes to the cloud before I worked out what was eating the connection.",
   },
 
   {
@@ -819,7 +819,7 @@ export const projects: Project[] = [
     ],
     hardPart: {
       head: "Proving the whole chain actually works",
-      body: "Every stage can look correct and still produce a font that will not install. The end to end test generates a synthetic photograph of a filled sheet, tilted, shadowed and noisy, drives a headless browser through the studio, downloads the OTF the app produced, and parses it back. That round trip is the only real proof, and it runs on every change.",
+      body: "Every stage can look right on its own and still hand you a font the operating system refuses to install. So the end to end test builds a synthetic photograph of a filled sheet, tilted and shadowed and noisy the way a real phone photo would be, drives a headless browser all the way through the studio, downloads whatever OTF comes out, and parses it back. If the round trip fails, something in the chain is lying, and it runs on every change.",
     },
     plates: [
       {
@@ -860,11 +860,11 @@ export const projects: Project[] = [
       },
     ],
     wrong: [
-      "Greyscale printing leaves the guide rules visible in the red channel, so a separate de-ruling step had to be added for sheets that were not printed in colour. It was found by printing on the wrong printer.",
-      "Bitmaps are the source of truth and outlines are always re-derived, which is correct and also means a trace settings change invalidates every cached outline at once.",
+      "Non photo blue guides vanish in the red channel, which is elegant right up until somebody prints the sheet in greyscale and the rules come back. I found that by printing on the wrong printer. There is a separate de-ruling step now for sheets that were not printed in colour.",
+      "Bitmaps are the source of truth and outlines get re-derived every time. That is the right call and it also means touching a single trace setting invalidates every cached outline you have at once.",
     ],
     learned:
-      "The licence question decided the algorithm. Wrapping the obvious library would have been a day of work and would have made every font produced by the tool a legal problem for whoever tried to sell it.",
+      "The licence question is what decided the algorithm. Wrapping Potrace would have been about a day. It would also have quietly attached GPL to every font anyone made with the tool, which is a nasty thing to find out later if you tried to sell one, so I wrote the boundary follower and the cubic fitter myself and it took considerably longer than a day.",
   },
 
   {
@@ -906,7 +906,7 @@ export const projects: Project[] = [
     ],
     hardPart: {
       head: "The honest version is the harder product",
-      body: "A colour filter shipped as thermal vision takes an afternoon and looks better in a screenshot. Building the calibration path, quantifying the reconstruction error, and printing RECONSTRUCTED across a beautiful false colour image is more work and a worse demo. The whole project only exists because the second one is the only version worth building.",
+      body: "Shipping a colour filter and calling it thermal vision takes an afternoon and screenshots beautifully. Building the calibration path, quantifying the reconstruction error, then printing the word RECONSTRUCTED across your own gorgeous false colour image is weeks of work and a worse demo in every way. That second one is the only version I am interested in building, which is most of why this is still on paper.",
     },
     metrics: [
       {
@@ -937,11 +937,11 @@ export const projects: Project[] = [
       },
     ],
     wrong: [
-      "No code exists. This is a design document set, and calling it a project without that caveat would be exactly the dishonesty it was written against.",
-      "The reconstruction path fails on metamers by construction. Two materials that look identical to three broadband channels will reconstruct identically and be different in reality. The spec states the failure mode instead of hiding it.",
+      "No code exists. This is ten specification documents and nothing else, and listing it as a project without saying that plainly would be the exact dishonesty the whole thing was written against.",
+      "The reconstruction path fails on metamers, by construction, and always will. Two materials that look identical across three broadband channels reconstruct identically and are genuinely different in the real world. That is written into the spec as a known failure mode rather than left for somebody to discover.",
     ],
     learned:
-      "Writing the physics document first killed four features before a line of code was written. That is the cheapest any feature has ever been to kill.",
+      "Writing the physics document before anything else killed four features outright, including the one that made the idea sound exciting in the first place. Silicon has a bandgap of 1.12 electronvolts and no amount of firmware argues with it. Cheapest four features I have ever removed.",
   },
 
   {
@@ -998,11 +998,11 @@ export const projects: Project[] = [
       },
     ],
     wrong: [
-      "It is opinionated to the point of being wrong for some registers. Legal and reference writing want the flat probable sentence, and the system does not distinguish those cases.",
-      "It can be followed into a different monotone. Enough enforced sentence variation starts to have its own detectable signature.",
+      "It is opinionated enough to be wrong for some registers. Legal writing and reference documentation want the flat probable sentence, and the system has no way of knowing when it is in one of those.",
+      "You can follow it into a new monotone. Enforce enough sentence variation and the variation itself becomes a signature, which I have now watched happen to my own writing twice.",
     ],
     learned:
-      "Every page of the DebugAI website, and this one, is written under these rules. Zero em dashes on this site is a rule from that document, not a stylistic accident.",
+      "The DebugAI site runs on these rules and so does this one. There is not a single em dash anywhere on either, which is a rule out of that document rather than an accident. Worth saying that the first draft of this portfolio failed its own test, and I only saw it once somebody read it back to me and said it did not sound like me.",
   },
 
   {
@@ -1038,7 +1038,7 @@ export const projects: Project[] = [
     ],
     hardPart: {
       head: "The dependency changes underneath you",
-      body: "yt-dlp tracks platforms that actively break extraction, so the tool is only ever as current as its dependency. The design imports the extractor dynamically and reloads it rather than pinning, because a pinned version of this particular library is a tool that stops working on a schedule.",
+      body: "yt-dlp is chasing platforms that are actively trying to break extraction, so this tool is only ever as current as its dependency is. Pinning the version would make it stop working on a predictable schedule, which is worse than the alternative, so the extractor is imported dynamically and reloaded instead.",
     },
     metrics: [
       {
@@ -1062,10 +1062,10 @@ export const projects: Project[] = [
       },
     ],
     wrong: [
-      "Cookie handling for authenticated sources is the fragile part and the error message when it fails is not specific enough to tell you which of three things went wrong.",
+      "Cookie handling for authenticated sources is the fragile part, and when it fails the error message is too vague to tell you which of three different things went wrong. I know that and have not fixed it.",
     ],
     learned:
-      "Built for one thing, archiving X Spaces, and grew a registry because the second platform request arrived the same week. The registry is the only reason the fifteenth was cheap.",
+      "I built this to archive X Spaces and nothing else. The second platform request turned up the same week, which was the point I stopped writing conditionals and put the platforms in a table. Fifteen of them now, and adding one is a row.",
   },
 ];
 

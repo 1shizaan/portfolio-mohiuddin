@@ -18,17 +18,17 @@ const MARKS = [
 const YEARS: { year: string; note: string; slugs: string[] }[] = [
   {
     year: "2024",
-    note: "Computer vision, and the first hardware I could not talk my way out of.",
+    note: "Computer vision, and then hardware, which I picked up mostly because I could not talk my way out of it.",
     slugs: ["fit-percentage", "ss-categorise", "optixon"],
   },
   {
     year: "2025",
-    note: "Three months spent on the wrong problem, then six on the right one.",
+    note: "Three months on the wrong problem. Then six on a better one, found by admitting the first.",
     slugs: ["agent-era", "matchledger", "rag-qa", "telecare"],
   },
   {
     year: "2026",
-    note: "A product with paying infrastructure behind it, and the tools that fell out of building it.",
+    note: "A product people pay for, and the small tools that fell out of building it.",
     slugs: ["debugai", "secaudit", "mediagrab", "deconstruct", "inkline", "beyondvision", "human-writing"],
   },
 ];
@@ -65,15 +65,15 @@ export default function Home() {
           <Reveal delay={120}>
             <div className="prose lead">
               <p>
-                I am Mohammed Mohi Uddin. I build systems that have to survive a real
-                constraint: no budget for inference, no network at the other end, no room
-                inside a pair of glasses, no second chance on a battery sitting against
-                somebody&apos;s head.
+                I&apos;m Mohammed Mohi Uddin. Most of what I build starts with something I
+                can&apos;t have. No inference budget. No network on the other end. Ten and a
+                half millimetres of width inside a pair of glasses. Whatever the shortage is,
+                it usually ends up designing the system better than I would have.
               </p>
               <p>
-                Fourteen projects are on this site. Four of them are paused or dead, and the
-                reason is written down each time. Every number carries a tag saying how it was
-                obtained, because a figure without a source is decoration.
+                Fourteen projects here. Four of them are paused or dead and I&apos;ve written
+                down why on each one. Every number on this site is tagged with how I got it,
+                because I published a wrong one once and I&apos;d rather not do it again.
               </p>
             </div>
             <div className="row wrap g10 mt28">
@@ -89,9 +89,10 @@ export default function Home() {
           <Reveal delay={180}>
             <SignalHero />
             <p className="mono muted mt14" style={{ fontSize: 11, lineHeight: 1.75, maxWidth: "52ch" }}>
-              A pulse waveform under motion. The red bands are samples the gyroscope flagged as
-              corrupted. The amber trace is drawn only where the signal can be trusted, which is
-              the OptiXon design and also the argument of everything below it.
+              A pulse waveform recorded while somebody is moving. The red bands are the stretches
+              the gyroscope flagged as corrupt. The amber trace only gets drawn where the signal
+              can be trusted. That is the OptiXon design, and roughly the argument of everything
+              underneath it.
             </p>
           </Reveal>
         </div>
@@ -142,10 +143,11 @@ export default function Home() {
 
           <Reveal delay={200}>
             <p className="prose mt40" style={{ fontSize: 15 }}>
-              This is not a stylistic flourish. Published copy for one of these projects once
-              claimed 750 installs when the true install count was 193, because two different
-              metrics had been added together. Separating what was measured from what was
-              assumed is the cheapest defence against being wrong in public.
+              The stamps exist because of a specific afternoon. Published copy for DebugAI said
+              750 installs. The real install count was 193. Nobody lied. I had added a downloads
+              figure to an installs figure without noticing they were different kinds of number,
+              and then put it on a website. Now every claim on this site says where it came from,
+              and the ones I only calculated say so too.
             </p>
           </Reveal>
         </div>
@@ -160,8 +162,8 @@ export default function Home() {
               Three years, in the order they <em>actually</em> happened.
             </h2>
             <p className="prose mt20" style={{ fontSize: 15 }}>
-              Including the parts that stopped. A pause with a reason attached is information.
-              A portfolio that only lists the wins is a sales page.
+              Including the parts that stopped. Two of these got shut down on purpose and I
+              found both endings more useful than most of the things that shipped.
             </p>
           </Reveal>
 
@@ -284,7 +286,7 @@ export default function Home() {
             <Reveal>
               <span className="eyebrow">// method</span>
               <h2 className="d2 mt20" style={{ maxWidth: "22ch" }}>
-                Four rules I did not read in a book. I got each one <em>wrong</em> first.
+                Four rules I got <em>wrong</em> before I got them right.
               </h2>
             </Reveal>
 
@@ -298,10 +300,10 @@ export default function Home() {
                 }}
               >
                 {[
-                  ["Build the ruler first", "The learned model is worth the difference between its score and the arithmetic baseline, and you cannot know that number unless you build the baseline."],
-                  ["Block before you compare", "Almost every scale problem is a cross product nobody blocked. Nine billion comparisons or four seconds is a data structure decision, not a hardware one."],
-                  ["Tag every claim", "Measured, derived, estimated, paper. A system that cannot say I do not know will lie at a steady rate and sound confident doing it."],
-                  ["A pause is data", "Three months on an agent that was really a bulk sender. Stopping and writing down why is what produced the next project."],
+                  ["Build the ruler first", "My fit model scored 85 percent, which sounded like a result until I built the arithmetic version and it scored 70. The learned part was worth fifteen points. Still real, much smaller story."],
+                  ["Block before you compare", "A hundred thousand rows against ninety eight thousand is 9.8 billion comparisons and it never finishes. Bucket them by amount and date first and the same run takes four seconds. That was a data structure, not a bigger machine."],
+                  ["Tag every claim", "Measured, derived, estimated, paper. Four words. I started using them after publishing a number I had assembled out of two other numbers."],
+                  ["A pause is data", "Three months on an agent that turned out to be a bulk sender. Stopping was fine. Writing down exactly what I had failed to measure is what produced the next project."],
                 ].map(([h, b], i) => (
                   <div key={h} className="stack g8">
                     <span className="mono muted" style={{ fontSize: 11, letterSpacing: "0.1em" }}>
@@ -333,9 +335,10 @@ export default function Home() {
               Hiring for something <em>hard?</em>
             </h2>
             <p className="prose mt20" style={{ fontSize: 16 }}>
-              I am in my final year and looking for a summer 2027 internship in AI engineering,
-              systems, or applied research. I am strongest in Python and TypeScript, comfortable
-              in C on embedded targets, and I will tell you plainly when I do not know something.
+              I&apos;m in my final year, looking for a summer 2027 internship in AI engineering,
+              systems, or applied research. Strongest in Python, then TypeScript, and I&apos;ll
+              write C when the target has 64 kilobytes of RAM and no operating system. If you ask
+              me something I don&apos;t know, I&apos;ll say so rather than guess at you.
             </p>
             <div className="row wrap g10 mt28">
               <a className="btn primary" href={`mailto:${site.email}`}>
