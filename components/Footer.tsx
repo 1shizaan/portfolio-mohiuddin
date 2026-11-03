@@ -10,8 +10,8 @@ export default function Footer() {
             <div className="foot-h">Contact</div>
             <div className="prose" style={{ fontSize: 15, maxWidth: "34ch" }}>
               <p>
-                Open to summer 2027 internships in AI engineering, systems, and applied
-                research. Reachable at any hour, answers within a day.
+                Building DebugAI from Hyderabad. Reachable at any hour, answers within a
+                day.
               </p>
             </div>
             <div className="mt14">

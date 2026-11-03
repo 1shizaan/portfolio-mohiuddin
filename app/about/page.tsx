@@ -67,9 +67,8 @@ export default function About() {
               Both of those are on this site with the reason written next to them.
             </p>
             <p>
-              What I want next is a team where the problems are harder than the ones I can find
-              on my own, and where somebody tells me I&apos;m wrong in a week instead of six
-              months.
+              What I want next is to build DebugAI around people who have done this before, and
+              who will tell me I&apos;m wrong in a week instead of six months.
             </p>
           </div>
 
@@ -109,9 +108,9 @@ export default function About() {
             <div>
               <span className="eyebrow">// currently</span>
               <ul className="cv-ul mt14">
-                <li>Running DebugAI, which real people pay for and occasionally break.</li>
+                <li>Running DebugAI, which real developers and their AI agents use, and occasionally break.</li>
+                <li>Building Other End, DebugAI&apos;s second product.</li>
                 <li>Reading toward uncertainty quantification and probabilistic ML.</li>
-                <li>Looking for a summer 2027 research or engineering internship.</li>
               </ul>
             </div>
 

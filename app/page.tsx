@@ -28,7 +28,7 @@ const YEARS: { year: string; note: string; slugs: string[] }[] = [
   },
   {
     year: "2026",
-    note: "A product people pay for, and the small tools that fell out of building it.",
+    note: "A product developers actually use, and the small tools that fell out of building it.",
     slugs: ["debugai", "secaudit", "mediagrab", "deconstruct", "inkline", "beyondvision", "human-writing"],
   },
 ];
@@ -332,11 +332,11 @@ export default function Home() {
         <div className="shell">
           <Reveal>
             <h2 className="d2" style={{ maxWidth: "17ch" }}>
-              Hiring for something <em>hard?</em>
+              Working on something <em>hard?</em>
             </h2>
             <p className="prose mt20" style={{ fontSize: 16 }}>
-              I&apos;m in my final year, looking for a summer 2027 internship in AI engineering,
-              systems, or applied research. Strongest in Python, then TypeScript, and I&apos;ll
+              I&apos;m building DebugAI, and I&apos;m always glad to hear from people working on hard
+              problems in AI tooling, systems or hardware. Strongest in Python, then TypeScript, and I&apos;ll
               write C when the target has 64 kilobytes of RAM and no operating system. If you ask
               me something I don&apos;t know, I&apos;ll say so rather than guess at you.
             </p>
