@@ -94,7 +94,7 @@ const ENG_RESUME: Doc = {
   audience: "AI engineering, backend and full stack roles at startups and product companies.",
   headline: "AI systems and backend engineer",
   summary:
-    "Final year computer science student who ships. Launched **DebugAI**, a debugging system for developers and AI agents with **5,800+ downloads** across three registries. Strongest at making expensive systems cheap: a reconciliation engine that replaced per row API calls with a blocked matcher and does **100,000 rows in 4.25 seconds** with zero API calls.",
+    "Final year computer science student who ships. Launched **DebugAI**, a debugging system for developers and AI agents with **23,000+ downloads** across three registries and no paid marketing. Strongest at making expensive systems cheap: a reconciliation engine that replaced per row API calls with a blocked matcher and does **100,000 rows in 4.25 seconds** with zero API calls.",
   sections: [
     {
       title: "Experience",
@@ -107,8 +107,9 @@ const ENG_RESUME: Doc = {
           tag: "Launched",
           bullets: [
             "Built and shipped every layer of a **five service monorepo**: VS Code extension, Express gateway, FastAPI inference engine, Next.js dashboard, PostgreSQL with pgvector, Redis.",
-            "**512 Marketplace installs, 5,800+ downloads** across VS Code, Open VSX and npm, the last a **standalone MCP server** agents call with no editor. 879 commits, 519 engine tests passing.",
-            "**Context assembly** from a stack trace: traced files forced in, then pgvector retrieval of code the trace never names, inside a token budget. SHA-256 cache, difficulty based routing, and a cross provider fallback that holds the response shape during an outage.",
+            "**23,000+ downloads, 430+ signed-up developers**, and a **standalone MCP server** that Claude Code, Codex and ChatGPT call on their own: over half of all debugs come from agents.",
+            "Second product, **Other End**: stops an AI agent whose edit provably breaks another file.",
+            "**Context assembly** from a stack trace: traced files forced in, then pgvector retrieval of code the trace never names, inside a token budget, behind a SHA-256 cache and a cross provider fallback.",
             "**Live billing** on production keys: HMAC verified webhooks, idempotency on the provider event id, and a tier guard that enforces an expired trial even when the cron fails.",
           ],
         },
@@ -138,14 +139,14 @@ const ENG_RESUME: Doc = {
           when: "2024, rebuilt 2026",
           title: "SS Categorise · multimodal classifier",
           bullets: [
-            "Fused an **EfficientNet-B3** embedding with a 500 term TF-IDF vector over OCR text: **96.92%** on a 260 image held-out set across 20 classes. The gain came from a confusion matrix showing a missing input channel, not from more capacity.",
+            "Fused an **EfficientNet-B3** embedding with a 500 term TF-IDF vector over OCR text: **96.92%** on a 260 image held-out set across 20 classes.",
           ],
         },
         {
           when: "Aug 2026",
           title: "Inkline · handwriting to installable font",
           bullets: [
-            "Homography un-warp of a photographed sheet, then a **Moore boundary tracer and Schneider cubic fitter written from scratch** because Potrace is GPL and would attach itself to every font the tool makes. Proven by a headless browser test that parses the OTF back.",
+            "Homography un-warp of a photographed sheet, then a **Moore boundary tracer and Schneider cubic fitter written from scratch** because Potrace is GPL and would attach itself to every font the tool makes.",
           ],
         },
       ],
@@ -155,7 +156,7 @@ const ENG_RESUME: Doc = {
       kind: "skills",
       skills: [
         { group: "Languages", items: "Python, TypeScript, JavaScript, C, SQL" },
-        { group: "Backend and ML", items: "FastAPI, Express, Node.js, Celery, Redis, PostgreSQL, pgvector, PyTorch, scikit-learn, OpenCV" },
+        { group: "Backend and ML", items: "FastAPI, Express, Node.js, Celery, Redis, PostgreSQL, pgvector, PyTorch, OpenCV" },
         { group: "Infrastructure", items: "React, Next.js, Docker, AWS EC2, Railway, Vercel, nginx, GitHub Actions, Sentry, OWASP Top 10" },
       ],
     },
@@ -203,7 +204,7 @@ const ENG_CV: Doc = {
           bullets: [
             "Designed and shipped every layer: the editor extension, an Express API gateway, a FastAPI inference engine, a Next.js dashboard and marketing site, PostgreSQL with pgvector, Redis, and the deployment pipeline across Vercel and Railway.",
             "Three distribution channels rather than one: the extension on the VS Code Marketplace and on Open VSX, which covers Cursor, Windsurf and VSCodium, and `@debugai/mcp` published to npm as a standalone MCP server so a coding agent calls the same engine with no editor involved. The MCP server resolves the files a stack trace names under a repository root allowlist with a containment check after realpath.",
-            "512 VS Code Marketplace installs and 5,800+ combined downloads across VS Code, Open VSX and npm, verified against the live registry APIs on 23 August 2026. Installs and downloads are separate metrics and only one of them sums.",
+            "23,000+ combined downloads across VS Code, Open VSX and npm and 430+ signed-up developers as of November 2026, with no paid marketing. Over half of all debugs now come from coding agents calling the MCP server on their own.",
             "Context assembly: parse the stack trace, force inclusion of the files it names, then retrieve related code the trace never mentions using pgvector embeddings over the repository, inside a managed token budget. A second retrieval pass runs when the model reports missing context, under a 40 second deadline with a fallback to the first pass result.",
             "Cost control: a SHA-256 cache key over error text, project and framework hint checked in Redis before any model call, plus difficulty based routing between a small and a large model and a cross provider fallback that preserves the response shape on an upstream 429 or 503.",
             "Error memory: a SHA-256 signature per error, recurrence tracked per project, and a fix confirmed by a human promoted to lead the next answer for that signature. Project scoped only, so a fix never leaks across users.",
